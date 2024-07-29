@@ -5,6 +5,7 @@
 package Formularios;
 
 import SantaInes.AdTotalEnCajaSantaInes;
+import SantaInes.DetalleOrdenesSantaInes;
 import java.awt.BorderLayout;
 
 /**
@@ -30,20 +31,20 @@ public class SantaInes extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        panelRound4 = new ClasesElRey.PanelRound();
+        panelRound4 = new ClasesAngels.PanelRound();
         jLabel4 = new javax.swing.JLabel();
-        panelRound3 = new ClasesElRey.PanelRound();
+        panelRound3 = new ClasesAngels.PanelRound();
         jLabel3 = new javax.swing.JLabel();
-        panelRound2 = new ClasesElRey.PanelRound();
+        panelRound2 = new ClasesAngels.PanelRound();
         jLabel2 = new javax.swing.JLabel();
-        panelRound1 = new ClasesElRey.PanelRound();
+        panelRound1 = new ClasesAngels.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         PanelSantaInes = new javax.swing.JPanel();
-        panelRound5 = new ClasesElRey.PanelRound();
+        panelRound5 = new ClasesAngels.PanelRound();
         jLabel6 = new javax.swing.JLabel();
-        panelRound6 = new ClasesElRey.PanelRound();
+        panelRound6 = new ClasesAngels.PanelRound();
         jLabel7 = new javax.swing.JLabel();
-        panelRound7 = new ClasesElRey.PanelRound();
+        panelRound7 = new ClasesAngels.PanelRound();
         jLabel8 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1270, 644));
@@ -336,13 +337,13 @@ public class SantaInes extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel2MousePressed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-    /*    VentasProductos_Pinula op2 = new VentasProductos_Pinula();
+        DetalleOrdenesSantaInes op2 = new DetalleOrdenesSantaInes();
         op2.setSize(1270, 528);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -397,12 +398,12 @@ public class SantaInes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private ClasesElRey.PanelRound panelRound1;
-    private ClasesElRey.PanelRound panelRound2;
-    private ClasesElRey.PanelRound panelRound3;
-    private ClasesElRey.PanelRound panelRound4;
-    private ClasesElRey.PanelRound panelRound5;
-    private ClasesElRey.PanelRound panelRound6;
-    private ClasesElRey.PanelRound panelRound7;
+    private ClasesAngels.PanelRound panelRound1;
+    private ClasesAngels.PanelRound panelRound2;
+    private ClasesAngels.PanelRound panelRound3;
+    private ClasesAngels.PanelRound panelRound4;
+    private ClasesAngels.PanelRound panelRound5;
+    private ClasesAngels.PanelRound panelRound6;
+    private ClasesAngels.PanelRound panelRound7;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,7 @@
  */
 package Formularios;
 
-import ClasesElRey.BDConexion_server;
+import ClasesAngels.BDConexion_server;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

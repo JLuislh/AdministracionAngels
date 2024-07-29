@@ -4,8 +4,8 @@
  */
 package FelAdmin;
 
-import ClasesElRey.BDConexion_SanLuis;
-import ClasesElRey.TextAreaRenderer;
+import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.TextAreaRenderer;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

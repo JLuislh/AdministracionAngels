@@ -4,8 +4,8 @@
  */
 package BDclass;
 
-import ClasesElRey.BDConexion_SanLuis;
-import ClasesElRey.BDConexion_SantaInes;
+import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.OrdenesClass;
 import java.sql.Connection;
@@ -182,6 +182,35 @@ public static ArrayList<InsertarProducto> ProductosVentasDetallado(String Fecha)
         return list;
 }
     
+public static ArrayList<InsertarProducto> DetalleOrdenesSantaInes(int orden) {
+        return OrderDetalle("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderDetalle(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("codigo"));
+                 t.setDescripcion(rs.getString("Descripcion"));
+                 t.setCantidad(rs.getInt("cantidad")); 
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}    
+    
  public static ArrayList<InsertarProducto> OrdenesSanLuis(String Fecha) {
         return OrderSanLuis("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
  }  
@@ -208,7 +237,37 @@ public static ArrayList<InsertarProducto> ProductosVentasDetallado(String Fecha)
             return null;
         } 
         return list;
+}
+
+public static ArrayList<InsertarProducto> DetalleOrdenesSanLuis(int orden) {
+        return OrderDetalleSanLuis("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderDetalleSanLuis(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("codigo"));
+                 t.setDescripcion(rs.getString("Descripcion"));
+                 t.setCantidad(rs.getInt("cantidad")); 
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
 }    
+    
     
 public static InsertarProducto BuscarTotalSantaInes(String a) throws SQLException{
         return buscarTotalSantaines(a ,null);
@@ -295,7 +354,33 @@ private static ArrayList<InsertarProducto> cod(String sql){
         return list;
 }  
 
+ public static ArrayList<InsertarProducto> GastosSantaInes(String Fecha) {
+        return Gasto("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
+ }  
 
+    private static ArrayList<InsertarProducto> Gasto(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setNoOrden(rs.getInt("noorden"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 t.setFecha(rs.getString("FECHA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}
 
 
 

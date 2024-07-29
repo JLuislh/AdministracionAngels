@@ -1,4 +1,4 @@
-package ClasesElRey;
+package ClasesAngels;
 
 
 import java.awt.Graphics;

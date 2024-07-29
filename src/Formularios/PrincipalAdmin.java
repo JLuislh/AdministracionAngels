@@ -50,11 +50,11 @@ public class PrincipalAdmin extends javax.swing.JFrame {
 
         Inicio = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Pinula = new ClasesElRey.PanelRound();
+        Pinula = new ClasesAngels.PanelRound();
         jLabel1 = new javax.swing.JLabel();
-        Encuentro = new ClasesElRey.PanelRound();
+        Encuentro = new ClasesAngels.PanelRound();
         jLabel2 = new javax.swing.JLabel();
-        faro = new ClasesElRey.PanelRound();
+        faro = new ClasesAngels.PanelRound();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -269,10 +269,10 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ClasesElRey.PanelRound Encuentro;
+    private ClasesAngels.PanelRound Encuentro;
     private javax.swing.JPanel Inicio;
-    private ClasesElRey.PanelRound Pinula;
-    private ClasesElRey.PanelRound faro;
+    private ClasesAngels.PanelRound Pinula;
+    private ClasesAngels.PanelRound faro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -104,7 +104,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="ClasesElRey.PanelRound" name="panelRound1">
+        <Container class="ClasesAngels.PanelRound" name="panelRound1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -148,7 +148,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound2">
+        <Container class="ClasesAngels.PanelRound" name="panelRound2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -192,7 +192,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound3">
+        <Container class="ClasesAngels.PanelRound" name="panelRound3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -236,7 +236,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound4">
+        <Container class="ClasesAngels.PanelRound" name="panelRound4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -299,7 +299,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound5">
+        <Container class="ClasesAngels.PanelRound" name="panelRound5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -342,7 +342,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound6">
+        <Container class="ClasesAngels.PanelRound" name="panelRound6">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -385,7 +385,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound7">
+        <Container class="ClasesAngels.PanelRound" name="panelRound7">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -429,7 +429,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="panelRound8">
+        <Container class="ClasesAngels.PanelRound" name="panelRound8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>

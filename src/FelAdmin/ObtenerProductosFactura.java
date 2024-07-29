@@ -5,8 +5,8 @@
 package FelAdmin;
 
 import java.sql.*;
-import ClasesElRey.BDConexion_SanLuis;
-import ClasesElRey.BDConexion_SantaInes;
+import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

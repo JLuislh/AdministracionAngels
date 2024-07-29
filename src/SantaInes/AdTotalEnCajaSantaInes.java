@@ -5,7 +5,7 @@
 package SantaInes;
 
 import BDclass.BDOrdenes;
-import ClasesElRey.BDConexion_SantaInes;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;

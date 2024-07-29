@@ -4,7 +4,7 @@
  */
 package FelAdmin;
 
-import ClasesElRey.TextAreaRenderer;
+import ClasesAngels.TextAreaRenderer;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

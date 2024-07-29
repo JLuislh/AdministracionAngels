@@ -98,7 +98,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="ClasesElRey.PanelRound" name="Pinula">
+        <Container class="ClasesAngels.PanelRound" name="Pinula">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="99" type="rgb"/>
@@ -137,7 +137,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="Encuentro">
+        <Container class="ClasesAngels.PanelRound" name="Encuentro">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -176,7 +176,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesElRey.PanelRound" name="faro">
+        <Container class="ClasesAngels.PanelRound" name="faro">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="cc" red="ff" type="rgb"/>
