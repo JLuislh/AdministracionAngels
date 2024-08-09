@@ -5,6 +5,7 @@
 package BDclass;
 
 import BDclass.BDConexion;
+import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import java.sql.*;
 import java.sql.Connection;
@@ -238,7 +239,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> Inven(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion conecta = new BDConexion();
+    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
     Connection cn = conecta.getConexion();
     
         try {

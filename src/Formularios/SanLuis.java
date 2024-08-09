@@ -4,6 +4,7 @@
  */
 package Formularios;
 
+import SanLuis.AdProductosInventarioComida;
 import SanLuis.AdTotalEnCajaSanLuis;
 import SanLuis.DetalleOrdenesSanLuis;
 import SantaInes.DetalleOrdenesSantaInes;
@@ -34,11 +35,11 @@ public class SanLuis extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         panelRound1 = new ClasesAngels.PanelRound();
-        jLabel1 = new javax.swing.JLabel();
-        panelRound2 = new ClasesAngels.PanelRound();
         jLabel2 = new javax.swing.JLabel();
-        panelRound3 = new ClasesAngels.PanelRound();
+        panelRound2 = new ClasesAngels.PanelRound();
         jLabel3 = new javax.swing.JLabel();
+        panelRound3 = new ClasesAngels.PanelRound();
+        jLabel1 = new javax.swing.JLabel();
         panelRound4 = new ClasesAngels.PanelRound();
         jLabel4 = new javax.swing.JLabel();
         PanelEncuentro = new javax.swing.JPanel();
@@ -74,35 +75,6 @@ public class SanLuis extends javax.swing.JPanel {
         panelRound1.setRoundTopLeft(20);
         panelRound1.setRoundTopRight(20);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CARGAR INVENTARIO");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel1MousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
-        panelRound1.setLayout(panelRound1Layout);
-        panelRound1Layout.setHorizontalGroup(
-            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        panelRound1Layout.setVerticalGroup(
-            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
-        );
-
-        panelRound2.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound2.setPreferredSize(new java.awt.Dimension(140, 60));
-        panelRound2.setRoundBottomLeft(20);
-        panelRound2.setRoundBottomRight(20);
-        panelRound2.setRoundTopLeft(20);
-        panelRound2.setRoundTopRight(20);
-
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("VENTAS POR DIA");
@@ -112,25 +84,23 @@ public class SanLuis extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
-        panelRound2.setLayout(panelRound2Layout);
-        panelRound2Layout.setHorizontalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
+        panelRound1.setLayout(panelRound1Layout);
+        panelRound1Layout.setHorizontalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        panelRound2Layout.setVerticalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+        panelRound1Layout.setVerticalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        panelRound3.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound3.setPreferredSize(new java.awt.Dimension(140, 60));
-        panelRound3.setRoundBottomLeft(20);
-        panelRound3.setRoundBottomRight(20);
-        panelRound3.setRoundTopLeft(20);
-        panelRound3.setRoundTopRight(20);
+        panelRound2.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound2.setPreferredSize(new java.awt.Dimension(140, 60));
+        panelRound2.setRoundBottomLeft(20);
+        panelRound2.setRoundBottomRight(20);
+        panelRound2.setRoundTopLeft(20);
+        panelRound2.setRoundTopRight(20);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -141,17 +111,44 @@ public class SanLuis extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
+        panelRound2.setLayout(panelRound2Layout);
+        panelRound2Layout.setHorizontalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        panelRound2Layout.setVerticalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        panelRound3.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound3.setPreferredSize(new java.awt.Dimension(140, 60));
+        panelRound3.setRoundBottomLeft(20);
+        panelRound3.setRoundBottomRight(20);
+        panelRound3.setRoundTopLeft(20);
+        panelRound3.setRoundTopRight(20);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CARGAR INVENTARIO");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound3Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelRound4.setBackground(new java.awt.Color(204, 204, 204));
@@ -188,7 +185,7 @@ public class SanLuis extends javax.swing.JPanel {
         PanelEncuentro.setLayout(PanelEncuentroLayout);
         PanelEncuentroLayout.setHorizontalGroup(
             PanelEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1270, Short.MAX_VALUE)
         );
         PanelEncuentroLayout.setVerticalGroup(
             PanelEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,13 +357,13 @@ public class SanLuis extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-    /*CargaProductos_Encuentro op2 = new CargaProductos_Encuentro();
+    AdProductosInventarioComida op2 = new AdProductosInventarioComida();
     op2.setSize(1270, 528);
     op2.setLocation(0, 0);
     PanelEncuentro.removeAll();
     PanelEncuentro.add(op2,BorderLayout.CENTER);
     PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();*/
+    PanelEncuentro.repaint();
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
