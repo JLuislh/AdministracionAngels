@@ -4,6 +4,7 @@
  */
 package Formularios;
 
+import SanLuis.AdProductosInventarioBebidas;
 import SanLuis.AdProductosInventarioComida;
 import SanLuis.AdTotalEnCajaSanLuis;
 import SanLuis.DetalleOrdenesSanLuis;
@@ -41,7 +42,7 @@ public class SanLuis extends javax.swing.JPanel {
         panelRound3 = new ClasesAngels.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         panelRound4 = new ClasesAngels.PanelRound();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         PanelEncuentro = new javax.swing.JPanel();
         panelRound5 = new ClasesAngels.PanelRound();
         jLabel6 = new javax.swing.JLabel();
@@ -131,10 +132,10 @@ public class SanLuis extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CARGAR INVENTARIO");
+        jLabel1.setText("INVENTARIO COMIDA");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel1MousePressed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
             }
         });
 
@@ -147,7 +148,7 @@ public class SanLuis extends javax.swing.JPanel {
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -158,11 +159,12 @@ public class SanLuis extends javax.swing.JPanel {
         panelRound4.setRoundTopLeft(20);
         panelRound4.setRoundTopRight(20);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INVENTARIO BEBIDAS");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                jLabel5MouseClicked(evt);
             }
         });
 
@@ -170,13 +172,11 @@ public class SanLuis extends javax.swing.JPanel {
         panelRound4.setLayout(panelRound4Layout);
         panelRound4Layout.setHorizontalGroup(
             panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         panelRound4Layout.setVerticalGroup(
             panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound4Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
         PanelEncuentro.setPreferredSize(new java.awt.Dimension(1270, 528));
@@ -201,6 +201,7 @@ public class SanLuis extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("CANTIDAD DESCARGA");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -229,6 +230,7 @@ public class SanLuis extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("ANULAR ORDEN");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -356,16 +358,6 @@ public class SanLuis extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-    AdProductosInventarioComida op2 = new AdProductosInventarioComida();
-    op2.setSize(1270, 528);
-    op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();
-    }//GEN-LAST:event_jLabel1MousePressed
-
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
     AdTotalEnCajaSanLuis op2 = new AdTotalEnCajaSanLuis();
     op2.setSize(1270, 528);
@@ -421,15 +413,25 @@ public class SanLuis extends javax.swing.JPanel {
     PanelEncuentro.repaint();*/
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-     /*   EliminarPedido_Encuentro op2 = new EliminarPedido_Encuentro();
-        op2.setSize(1270, 528);
-        op2.setLocation(0, 0);
-        PanelEncuentro.removeAll();
-        PanelEncuentro.add(op2,BorderLayout.CENTER);
-        PanelEncuentro.revalidate();
-        PanelEncuentro.repaint();*/
-    }//GEN-LAST:event_jLabel4MouseClicked
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    AdProductosInventarioComida op2 = new AdProductosInventarioComida();
+    op2.setSize(1270, 528);
+    op2.setLocation(0, 0);
+    PanelEncuentro.removeAll();
+    PanelEncuentro.add(op2,BorderLayout.CENTER);
+    PanelEncuentro.revalidate();
+    PanelEncuentro.repaint();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    AdProductosInventarioBebidas op2 = new AdProductosInventarioBebidas();
+    op2.setSize(1270, 528);
+    op2.setLocation(0, 0);
+    PanelEncuentro.removeAll();
+    PanelEncuentro.add(op2,BorderLayout.CENTER);
+    PanelEncuentro.revalidate();
+    PanelEncuentro.repaint();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -437,7 +439,7 @@ public class SanLuis extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

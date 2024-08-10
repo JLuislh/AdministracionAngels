@@ -7,6 +7,7 @@ package SanLuis;
 import BDclass.BDConexion;
 import BDclass.BDIngresos;
 import BDclass.BDProductos;
+import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -41,7 +42,7 @@ public class AdProductosInventarioBebidas extends javax.swing.JPanel {
     
    private void imprimir(){
        
-         BDConexion con= new BDConexion();
+         BDConexion_SanLuis con= new BDConexion_SanLuis();
          Connection conexion= con.getConexion();
         try {
             JasperReport jasperReport=(JasperReport)JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\InventarioBebidas.jasper");
@@ -216,12 +217,14 @@ public class AdProductosInventarioBebidas extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("CODIGO");
 
+        Codigo.setEditable(false);
         Codigo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Codigo.setForeground(new java.awt.Color(51, 102, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("DESCRIPCION");
 
+        Descri.setEditable(false);
         Descri.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Descri.setForeground(new java.awt.Color(51, 102, 255));
 
@@ -355,7 +358,7 @@ public class AdProductosInventarioBebidas extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

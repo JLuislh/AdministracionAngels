@@ -4,7 +4,6 @@
  */
 package SanLuis;
 
-import BDclass.BDConexion;
 import BDclass.BDIngresos;
 import BDclass.BDProductos;
 import ClasesAngels.BDConexion_SanLuis;
@@ -116,7 +115,7 @@ public class AdProductosInventarioComida extends javax.swing.JPanel {
     }
 
      public void ActualizarCantidad(){
-     BDConexion conecta = new BDConexion();
+     BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement sm = null;
         try {
@@ -208,12 +207,14 @@ public class AdProductosInventarioComida extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("CODIGO");
 
+        Codigo.setEditable(false);
         Codigo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Codigo.setForeground(new java.awt.Color(51, 102, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("DESCRIPCION");
 
+        Descri.setEditable(false);
         Descri.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Descri.setForeground(new java.awt.Color(51, 102, 255));
 

@@ -6,6 +6,7 @@ package BDclass;
 
 //import com.mysql.cj.xdevapi.Statement;
 import BDclass.BDConexion;
+import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import java.sql.*;
 import java.sql.Connection;
@@ -278,7 +279,7 @@ private static ArrayList<InsertarProducto> SQL3(String sql){
     }
     
     public static InsertarProducto InsertarProductoIngresoInventario(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         smtp =con.prepareStatement("insert into ingresosproductos (idproductosinve,cantidad,estado,fecha) values(?,?,1,CURRENT_TIMESTAMP)");

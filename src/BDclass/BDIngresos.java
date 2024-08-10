@@ -455,7 +455,7 @@ public static ArrayList<InsertarProducto>ListadeIngresos (int a) {
 
     private static ArrayList<InsertarProducto> in(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion conecta = new BDConexion();
+    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
     Connection cn = conecta.getConexion();
     
         try {
