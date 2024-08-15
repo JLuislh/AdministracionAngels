@@ -50,6 +50,7 @@ public  class TextAreaRenderer extends JTextArea implements TableCellRenderer {
             setWrapStyleWord(true);
         }
 
+        @Override
         public Component getTableCellRendererComponent(
                 JTable table, Object obj, boolean isSelected,
                 boolean hasFocus, int row, int column) {
@@ -82,11 +83,11 @@ public  class TextAreaRenderer extends JTextArea implements TableCellRenderer {
             if (rows == null) {
                 cellSizes.put(table, rows = new HashMap());
             }
-            Map rowheights = (Map) rows.get(new Integer(row));
+            Map rowheights = (Map) rows.get(row);
             if (rowheights == null) {
-                rows.put(new Integer(row), rowheights = new HashMap());
+                rows.put(row, rowheights = new HashMap());
             }
-            rowheights.put(new Integer(column), new Integer(height));
+            Object put = rowheights.put(Integer.valueOf(column), new Integer(height));
         }
 
         /**
@@ -114,7 +115,7 @@ public  class TextAreaRenderer extends JTextArea implements TableCellRenderer {
             if (rows == null) {
                 return 0;
             }
-            Map rowheights = (Map) rows.get(new Integer(row));
+            Map rowheights = (Map) rows.get(row);
             if (rowheights == null) {
                 return 0;
             }
@@ -122,7 +123,7 @@ public  class TextAreaRenderer extends JTextArea implements TableCellRenderer {
             for (Iterator it = rowheights.entrySet().iterator();
                     it.hasNext();) {
                 Map.Entry entry = (Map.Entry) it.next();
-                int cellHeight = ((Integer) entry.getValue()).intValue();
+                int cellHeight = ((Integer) entry.getValue());
                 maximum_height = Math.max(maximum_height, cellHeight);
             }
             return maximum_height;
