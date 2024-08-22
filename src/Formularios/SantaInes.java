@@ -6,6 +6,7 @@ package Formularios;
 
 import SantaInes.AdTotalEnCajaSantaInes;
 import SantaInes.DetalleOrdenesSantaInes;
+import SantaInes.ReporteMensual;
 import java.awt.BorderLayout;
 
 /**
@@ -245,6 +246,7 @@ public class SantaInes extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("REPORTE MENSUAL");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -378,13 +380,13 @@ public class SantaInes extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        /*HistorialInventario_Pinula op2 = new HistorialInventario_Pinula();
+        ReporteMensual op2 = new ReporteMensual();
         op2.setSize(1270, 528);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel8MouseClicked
     
 
