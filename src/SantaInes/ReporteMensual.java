@@ -44,7 +44,7 @@ public class ReporteMensual extends javax.swing.JPanel {
            
                 BDConexion_SantaInes con = new BDConexion_SantaInes();
                 Connection conexion = con.getConexion();
-                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ResumenIngresos.jasper");
+                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ResumenIngresosSantaInes.jasper");
                 Map parametros = new HashMap();
                 parametros.put("FECHAIN", FECHAINs);
                 parametros.put("FECHAFIN", FECHAFINs);
