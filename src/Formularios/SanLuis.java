@@ -8,6 +8,7 @@ import SanLuis.AdProductosInventarioBebidas;
 import SanLuis.AdProductosInventarioComida;
 import SanLuis.AdTotalEnCajaSanLuis;
 import SanLuis.DetalleOrdenesSanLuis;
+import SanLuis.ReporteMensual;
 import SantaInes.DetalleOrdenesSantaInes;
 import java.awt.BorderLayout;
 
@@ -43,7 +44,7 @@ public class SanLuis extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         panelRound4 = new ClasesAngels.PanelRound();
         jLabel5 = new javax.swing.JLabel();
-        PanelEncuentro = new javax.swing.JPanel();
+        PanelSanLuis = new javax.swing.JPanel();
         panelRound5 = new ClasesAngels.PanelRound();
         jLabel6 = new javax.swing.JLabel();
         panelRound6 = new ClasesAngels.PanelRound();
@@ -179,16 +180,16 @@ public class SanLuis extends javax.swing.JPanel {
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        PanelEncuentro.setPreferredSize(new java.awt.Dimension(1270, 528));
+        PanelSanLuis.setPreferredSize(new java.awt.Dimension(1270, 528));
 
-        javax.swing.GroupLayout PanelEncuentroLayout = new javax.swing.GroupLayout(PanelEncuentro);
-        PanelEncuentro.setLayout(PanelEncuentroLayout);
-        PanelEncuentroLayout.setHorizontalGroup(
-            PanelEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PanelSanLuisLayout = new javax.swing.GroupLayout(PanelSanLuis);
+        PanelSanLuis.setLayout(PanelSanLuisLayout);
+        PanelSanLuisLayout.setHorizontalGroup(
+            PanelSanLuisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1270, Short.MAX_VALUE)
         );
-        PanelEncuentroLayout.setVerticalGroup(
-            PanelEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PanelSanLuisLayout.setVerticalGroup(
+            PanelSanLuisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 572, Short.MAX_VALUE)
         );
 
@@ -328,7 +329,7 @@ public class SanLuis extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(102, Short.MAX_VALUE))
-            .addComponent(PanelEncuentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelSanLuis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,7 +345,7 @@ public class SanLuis extends javax.swing.JPanel {
                     .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelEncuentro, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
+                .addComponent(PanelSanLuis, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -363,20 +364,20 @@ public class SanLuis extends javax.swing.JPanel {
     AdTotalEnCajaSanLuis op2 = new AdTotalEnCajaSanLuis();
     op2.setSize(1270, 528);
     op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();
+    PanelSanLuis.removeAll();
+    PanelSanLuis.add(op2,BorderLayout.CENTER);
+    PanelSanLuis.revalidate();
+    PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel2MousePressed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
     DetalleOrdenesSanLuis op2 = new DetalleOrdenesSanLuis();
     op2.setSize(1270, 528);
     op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();
+    PanelSanLuis.removeAll();
+    PanelSanLuis.add(op2,BorderLayout.CENTER);
+    PanelSanLuis.revalidate();
+    PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -405,38 +406,38 @@ public class SanLuis extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-    /*HistorialInventario_Encuentro op2 = new HistorialInventario_Encuentro();
-    op2.setSize(1270, 528);
-    op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();*/
+    ReporteMensual op2 = new ReporteMensual();
+        op2.setSize(1270, 528);
+        op2.setLocation(0, 0);
+        PanelSanLuis.removeAll();
+        PanelSanLuis.add(op2,BorderLayout.CENTER);
+        PanelSanLuis.revalidate();
+        PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
     AdProductosInventarioComida op2 = new AdProductosInventarioComida();
     op2.setSize(1270, 528);
     op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();
+    PanelSanLuis.removeAll();
+    PanelSanLuis.add(op2,BorderLayout.CENTER);
+    PanelSanLuis.revalidate();
+    PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
     AdProductosInventarioBebidas op2 = new AdProductosInventarioBebidas();
     op2.setSize(1270, 528);
     op2.setLocation(0, 0);
-    PanelEncuentro.removeAll();
-    PanelEncuentro.add(op2,BorderLayout.CENTER);
-    PanelEncuentro.revalidate();
-    PanelEncuentro.repaint();
+    PanelSanLuis.removeAll();
+    PanelSanLuis.add(op2,BorderLayout.CENTER);
+    PanelSanLuis.revalidate();
+    PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelEncuentro;
+    private javax.swing.JPanel PanelSanLuis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

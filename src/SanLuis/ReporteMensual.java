@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package SantaInes;
+package SanLuis;
 
+import ClasesAngels.BDConexion_SanLuis;
+import SantaInes.*;
 import ClasesAngels.BDConexion_SantaInes;
 import java.sql.Connection;
 import java.text.DateFormat;
@@ -42,7 +44,7 @@ public class ReporteMensual extends javax.swing.JPanel {
             FECHAFINs = df.format(FECHAFIN.getDate());
 
            
-                BDConexion_SantaInes con = new BDConexion_SantaInes();
+                BDConexion_SanLuis con = new BDConexion_SanLuis();
                 Connection conexion = con.getConexion();
                 JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ResumenIngresos.jasper");
                 Map parametros = new HashMap();
