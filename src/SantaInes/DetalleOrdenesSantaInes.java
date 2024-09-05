@@ -4,8 +4,8 @@
  */
 package SantaInes;
 
-import BDclass.BDConexion;
 import BDclass.BDOrdenes;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -230,7 +230,7 @@ public class DetalleOrdenesSantaInes extends javax.swing.JPanel {
      
       public void ValidarOrdenes() {
             try {
-                BDConexion conecta = new BDConexion();
+                BDConexion_SantaInes conecta = new BDConexion_SantaInes();
                 Connection cn = conecta.getConexion();
                 java.sql.Statement stmt = cn.createStatement();
                 ResultSet rs = stmt.executeQuery("select count(noorden) cantidad from ordenes where estado = 1");

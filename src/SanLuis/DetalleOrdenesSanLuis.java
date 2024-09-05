@@ -5,8 +5,8 @@
 package SanLuis;
 
 import SantaInes.*;
-import BDclass.BDConexion;
 import BDclass.BDOrdenes;
+import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -231,7 +231,7 @@ public class DetalleOrdenesSanLuis extends javax.swing.JPanel {
      
       public void ValidarOrdenes() {
             try {
-                BDConexion conecta = new BDConexion();
+                BDConexion_SanLuis conecta = new BDConexion_SanLuis();
                 Connection cn = conecta.getConexion();
                 java.sql.Statement stmt = cn.createStatement();
                 ResultSet rs = stmt.executeQuery("select count(noorden) cantidad from ordenes where estado = 1");

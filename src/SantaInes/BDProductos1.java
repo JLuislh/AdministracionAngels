@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package BDclass;
+package SantaInes;
 
 //import com.mysql.cj.xdevapi.Statement;
-import BDclass.BDConexion;
+import SanLuis.*;
+import BDclass.Productos;
 import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import java.sql.*;
 import java.sql.Connection;
@@ -17,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author jluis
  */
-public class BDProductos {
+public class BDProductos1 {
     
     
     int a;
@@ -36,7 +38,7 @@ public class BDProductos {
 
     private static ArrayList<Productos> consultarSQL(String sql) {
         ArrayList<Productos> list = new ArrayList<Productos>();
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection cn = conecta.getConexion();
         DecimalFormat df = new DecimalFormat("#0.00");
         
@@ -64,7 +66,7 @@ public class BDProductos {
     
     
  public static InsertarProducto InsertarProducto_Pedido(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -92,9 +94,24 @@ public class BDProductos {
        
     }
  
+ public static InsertarProducto InsertarProductoIngresoInventario(InsertarProducto t) throws SQLException{
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+        Connection con = conecta.getConexion();
+        PreparedStatement smtp = null;
+        smtp =con.prepareStatement("insert into ingresosproductos (idproductosinve,cantidad,estado,fecha) values(?,?,1,CURRENT_TIMESTAMP)");
+        try {
+         smtp.setInt(1,t.getIdregreso());
+         smtp.setInt(2,t.getCantidad());
+         smtp.executeUpdate();
+     } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "CUAL ERROR = "+e);}
+       con.close();
+       smtp.close(); 
+        return t;
+    }
  
  public static InsertarProducto InsertarProducto_Pedido_combo(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -123,7 +140,7 @@ public class BDProductos {
  
  
    public static InsertarProducto InsertarProducto_Pedido_tortilla(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -150,7 +167,7 @@ public class BDProductos {
  
  
     public static InsertarProducto InsertarPedido(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         smtp =con.prepareStatement("insert into Ordenes (FECHA) values(CURRENT_TIMESTAMP)",Statement.RETURN_GENERATED_KEYS);
@@ -179,113 +196,19 @@ public class BDProductos {
 "inner join productos pro on pro.ID_PRODUCTO = p.ID_PRODUCTO join notas n on p.ID_PRODUCTOS_PEDIDO = n.ID_PRODUCTOS_PEDIDO join descripcionnotas dn on\n" +
 "  dn.id = n.ID where p.ID_PEDIDO = "+a+" group by cantidad,tipo,pro.DESCRIPCION" );
     }*/
-    
- public static ArrayList<InsertarProducto> ListarProductosPedidos (int a ) {
-        return SQL3("select\n" +
-"ID_PRODUCTOS_PEDIDO,cantidad,\n" +
-"if(p.adicional = 1, \n" +
-"    concat(if(p.tipo = 1,'PAN DE','TORTILLA DE'),'  ',pro.DESCRIPCION,' ',\n" +
-"    (select  GROUP_CONCAT(dn.descripcion SEPARATOR ' / ') as descri from  notas n inner join descripcionnotas dn on\n" +
-"dn.id = n.ID where ID_PRODUCTOS_PEDIDO = p.ID_PRODUCTOS_PEDIDO)),pro.DESCRIPCION) as DESCRIPCION,truncate(p.precio,2) as Precio\n" +
-"from productos_pedido p \n" +
-"inner join productos pro on p.ID_PRODUCTO = pro.ID_PRODUCTO where p.id_pedido ="+a+";");    
- }  
-
-private static ArrayList<InsertarProducto> SQL3(String sql){
-    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion conecta = new BDConexion();
-    Connection cn = conecta.getConexion();
-    
-        try {
-            InsertarProducto t;
-            Statement stmt = cn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()){
-                 t = new InsertarProducto();
-                 t.setId_producto_pedidos(rs.getInt("ID_PRODUCTOS_PEDIDO"));
-                 t.setDescripcion(rs.getString("DESCRIPCION").toUpperCase());
-                 t.setCantidad1(rs.getInt("cantidad"));
-                 t.setPrecio(rs.getDouble("Precio"));
-                 list.add(t);
-            }
-            cn.close();
-        } catch (Exception e) {
-            System.out.println("error consulta DE LA ATABLA "+e);
-            return null;
-        } 
-        return list;
-}
  
  
- 
-
- public static ArrayList<Productos> ListarProductosInventario() {
-
-        return ListarInventario("SELECT codigo,DESCRIPCION,CANTIDAD FROM productos_inventario");
-    }
-
-    private static ArrayList<Productos> ListarInventario(String sql) {
-        ArrayList<Productos> list = new ArrayList<Productos>();
+ /*
+     public static InsertarProducto InsertarProductoDescargaInventario(InsertarProducto t) throws SQLException{
         BDConexion conecta = new BDConexion();
-        Connection cn = conecta.getConexion();
-        try {
-            Productos c;
-            Statement stmt = cn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                c = new Productos();
-                c.setCodigo(rs.getInt("codigo"));
-                c.setDescripcion(rs.getString("descripcion"));
-                c.setCantidad(rs.getInt("cantidad"));
-               
-
-                list.add(c);
-            }
-            cn.close();
-        } catch (SQLException e) {
-            System.err.println("Error Consulta producto por nombre " + e);
-            return null;
-        }
-        return list;
-    }
-
-
- public static Productos BuscarProducto (int idc) throws SQLException{
-    
-        return buscarDescarga(idc, null);
-        
-    }
-    
-    public static Productos buscarDescarga(int idc, Productos c) throws SQLException{
-        
-        BDConexion conecta = new BDConexion();
-        Connection cn = conecta.getConexion();
-        PreparedStatement ps =null;
-        ps = cn.prepareStatement("SELECT codigo,DESCRIPCION,cantidad FROM productos_inventario where codigo ="+idc);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()){
-             if (c == null){
-             c = new Productos(){   };
-        
-        }
-        c.setCodigo(rs.getInt("codigo"));
-        c.setDescripcion(rs.getString("descripcion"));
-        c.setCantidad(rs.getInt("cantidad"));
-        }
-        cn.close();
-        ps.close();
-        return c;
-        
-    }
-    
-    public static InsertarProducto InsertarProductoIngresoInventario(InsertarProducto t) throws SQLException{
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
-        smtp =con.prepareStatement("insert into ingresosproductos (idproductosinve,cantidad,estado,fecha) values(?,?,1,CURRENT_TIMESTAMP)");
+        smtp =con.prepareStatement("insert into productosdescargas (codigo,idproductosinve,cantidadout,unidad_medida) values(?,?,?,?)");
         try {
-         smtp.setInt(1,t.getIdregreso());
-         smtp.setInt(2,t.getCantidad());
+         smtp.setInt(1,t.getCodigo());
+         smtp.setInt(2,t.getIdregreso());
+         smtp.setInt(3,t.getCantidad());
+         smtp.setString(4,t.getUMedida());
          smtp.executeUpdate();
      } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "CUAL ERROR = "+e);}
@@ -294,7 +217,27 @@ private static ArrayList<InsertarProducto> SQL3(String sql){
         return t;
     }
     
-    
+     
+      public static InsertarProducto InsertarGastos(InsertarProducto t) throws SQLException{
+        BDConexion conecta = new BDConexion();
+        Connection con = conecta.getConexion();
+        PreparedStatement smtp = null;
+        smtp =con.prepareStatement("insert into gastosdiarios(descripciongasto,precio,fecha,cantidad,factura) values(?,?,?,?,?)");
+        try {
+         smtp.setString(1,t.getDescripcion());
+         smtp.setDouble(2,t.getPrecio());
+         smtp.setString(3, t.getFecha());
+         smtp.setInt(4, t.getCantidad());
+         smtp.setString(5, t.getNofactura());
+         
+         smtp.executeUpdate();
+     } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "CUAL ERROR = "+e);}
+       con.close();
+       smtp.close(); 
+        return t;
+    }
+    */
     
     
 

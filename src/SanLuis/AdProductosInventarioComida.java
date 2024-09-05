@@ -5,7 +5,6 @@
 package SanLuis;
 
 import BDclass.BDIngresos;
-import BDclass.BDProductos;
 import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;

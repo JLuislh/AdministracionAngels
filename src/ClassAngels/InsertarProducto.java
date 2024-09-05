@@ -32,7 +32,26 @@ public class InsertarProducto {
     private int NoOrden;
     private int Status;
     private String UMedida;
+    private String Nota;
+    private String nofactura;
 
+    public String getNota() {
+        return Nota;
+    }
+
+    public void setNota(String Nota) {
+        this.Nota = Nota;
+    }
+
+    public String getNofactura() {
+        return nofactura;
+    }
+
+    public void setNofactura(String nofactura) {
+        this.nofactura = nofactura;
+    }
+    
+    
     public double getEfectivo() {
         return Efectivo;
     }

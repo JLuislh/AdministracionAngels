@@ -4,7 +4,6 @@
  */
 package SantaInes;
 
-import BDclass.BDConexion;
 import BDclass.BDOrdenes;
 import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;

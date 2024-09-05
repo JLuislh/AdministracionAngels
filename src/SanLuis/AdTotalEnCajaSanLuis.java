@@ -5,7 +5,6 @@
 package SanLuis;
 
 import SantaInes.*;
-import BDclass.BDConexion;
 import BDclass.BDOrdenes;
 import ClasesAngels.BDConexion_SanLuis;
 import ClasesAngels.BDConexion_SantaInes;

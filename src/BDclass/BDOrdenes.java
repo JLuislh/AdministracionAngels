@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  */
 public class BDOrdenes {
     
-    
+  /*  
      public static OrdenesClass InsertarPedido(OrdenesClass t) throws SQLException{
         BDConexion conecta = new BDConexion();
         Connection con = conecta.getConexion();
@@ -153,7 +153,7 @@ public static ArrayList<InsertarProducto> ProductosVentasDetallado(String Fecha)
         } 
         return list;
 }      
-    
+    */
   public static ArrayList<InsertarProducto> OrdenesSantaInes(String Fecha) {
         return Order("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
  }  
@@ -325,7 +325,7 @@ public static InsertarProducto BuscarTotalSanLuis(String a) throws SQLException{
 
 
 
-
+/*
 
 public static ArrayList<InsertarProducto> ListarCodigosPedido (int a ) {
         return cod(" select codigo,cantidad from ventas where NOORDEN = "+a+";");    
@@ -352,7 +352,7 @@ private static ArrayList<InsertarProducto> cod(String sql){
             return null;
         } 
         return list;
-}  
+}  */
 
  public static ArrayList<InsertarProducto> GastosSantaInes(String Fecha) {
         return Gasto("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    

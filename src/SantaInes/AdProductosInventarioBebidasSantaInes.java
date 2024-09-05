@@ -4,9 +4,8 @@
  */
 package SantaInes;
 
-import BDclass.BDConexion;
 import BDclass.BDIngresos;
-import BDclass.BDProductos;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -41,7 +40,7 @@ public class AdProductosInventarioBebidasSantaInes extends javax.swing.JPanel {
     
    private void imprimir(){
        
-         BDConexion con= new BDConexion();
+         BDConexion_SantaInes con= new BDConexion_SantaInes();
          Connection conexion= con.getConexion();
         try {
             JasperReport jasperReport=(JasperReport)JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\InventarioBebidas.jasper");
@@ -104,7 +103,7 @@ public class AdProductosInventarioBebidasSantaInes extends javax.swing.JPanel {
             p.setIdregreso(Integer.parseInt(Codigo.getText()));
             p.setCantidad(Integer.parseInt(cantidadin.getText()));
             //p.setPrecio(Double.parseDouble(costo.getText()));
-            BDProductos.InsertarProductoIngresoInventario(p);
+            BDProductos1.InsertarProductoIngresoInventario(p);
             JOptionPane.showMessageDialog(null, "Ingreso Agregado...");
             ActualizarCantidad();
             limpíar();
@@ -116,7 +115,7 @@ public class AdProductosInventarioBebidasSantaInes extends javax.swing.JPanel {
     }
 
      public void ActualizarCantidad(){
-     BDConexion conecta = new BDConexion();
+     BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement sm = null;
         try {

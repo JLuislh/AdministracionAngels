@@ -4,9 +4,7 @@
  */
 package SanLuis;
 
-import BDclass.BDConexion;
 import BDclass.BDIngresos;
-import BDclass.BDProductos;
 import ClasesAngels.BDConexion_SanLuis;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
@@ -117,7 +115,7 @@ public class AdProductosInventarioBebidas extends javax.swing.JPanel {
     }
 
      public void ActualizarCantidad(){
-     BDConexion conecta = new BDConexion();
+     BDConexion_SanLuis conecta = new BDConexion_SanLuis();
         Connection con = conecta.getConexion();
         PreparedStatement sm = null;
         try {
