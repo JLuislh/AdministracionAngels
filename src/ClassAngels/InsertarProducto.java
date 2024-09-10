@@ -232,11 +232,19 @@ public class InsertarProducto {
     }  
     
     
-    
+    private String DescripcionCuenta;
     private String descripcion;
     private String tipodeproducto;
     private int cantidad1;
 
+    public String getDescripcionCuenta() {
+        return DescripcionCuenta;
+    }
+
+    public void setDescripcionCuenta(String DescripcionCuenta) {
+        this.DescripcionCuenta = DescripcionCuenta;
+    }
+    
     public String getDescripcion() {
         return descripcion;
     }

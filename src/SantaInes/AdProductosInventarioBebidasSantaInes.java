@@ -103,7 +103,7 @@ public class AdProductosInventarioBebidasSantaInes extends javax.swing.JPanel {
             p.setIdregreso(Integer.parseInt(Codigo.getText()));
             p.setCantidad(Integer.parseInt(cantidadin.getText()));
             //p.setPrecio(Double.parseDouble(costo.getText()));
-            BDProductos1.InsertarProductoIngresoInventario(p);
+            BDProductosSantaInes.InsertarProductoIngresoInventario(p);
             JOptionPane.showMessageDialog(null, "Ingreso Agregado...");
             ActualizarCantidad();
             limpíar();

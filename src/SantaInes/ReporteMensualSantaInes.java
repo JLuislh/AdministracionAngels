@@ -23,7 +23,7 @@ import net.sf.jasperreports.engine.util.JRLoader;
  *
  * @author jluis
  */
-public class ReporteMensual extends javax.swing.JPanel {
+public class ReporteMensualSantaInes extends javax.swing.JPanel {
 
     String FECHAINs;
     String FECHAFINs;
@@ -31,7 +31,7 @@ public class ReporteMensual extends javax.swing.JPanel {
     /**
      * Creates new form ReporteMen
      */
-    public ReporteMensual() {
+    public ReporteMensualSantaInes() {
         initComponents();
     }
 

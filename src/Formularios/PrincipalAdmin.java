@@ -67,7 +67,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
         Inicio.setLayout(InicioLayout);
         InicioLayout.setHorizontalGroup(
             InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1270, Short.MAX_VALUE)
+            .addGap(0, 1320, Short.MAX_VALUE)
         );
         InicioLayout.setVerticalGroup(
             InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +178,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, 1320, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -194,7 +194,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
     SantaInes op2 = new SantaInes();
-    op2.setSize(1270, 644);
+    op2.setSize(1320, 644);
     op2.setLocation(0, 0);
     Inicio.removeAll();
     Inicio.add(op2,BorderLayout.CENTER);
@@ -206,7 +206,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
     SanLuis op2 = new SanLuis();
-    op2.setSize(1270, 644);
+    op2.setSize(1320, 644);
     op2.setLocation(0, 0);
     Inicio.removeAll();
     Inicio.add(op2,BorderLayout.CENTER);

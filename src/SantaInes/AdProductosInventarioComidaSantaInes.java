@@ -22,13 +22,15 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
+import java.sql.ResultSet;
+
 
 /**
  *
  * @author jluis
  */
 public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
-
+     int estado;
     /**
      * Creates new form ProductosInventario
      */
@@ -102,7 +104,7 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
             
             p.setIdregreso(Integer.parseInt(Codigo.getText()));
             p.setCantidad(Integer.parseInt(cantidadin.getText()));
-            BDProductos1.InsertarProductoIngresoInventario(p);
+            BDProductosSantaInes.InsertarProductoIngresoInventario(p);
             JOptionPane.showMessageDialog(null, "Ingreso Agregado...");
             ActualizarCantidad();
             limpíar();
@@ -160,6 +162,40 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
              
      }
      
+     public void EstadoDescarga() {
+          
+            try {
+                BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+                Connection cn = conecta.getConexion();
+                java.sql.Statement stmt = cn.createStatement();
+                ResultSet rs = stmt.executeQuery("select estado from angels.productosdescargas WHERE codigo = "+Codigo.getText()+" group by estado;");
+                while (rs.next()) {
+                      estado = (rs.getInt(1));
+                }
+                rs.close();
+                stmt.close();
+                cn.close();
+            } catch (Exception error) {
+                System.out.print(error);
+            }
+            if (estado == 1) {Descarga.setSelected(true);}else {Descarga.setSelected(false);}
+        }
+     
+     
+     public void DescargarSioNo(int a){
+     BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+        Connection con = conecta.getConexion();
+        PreparedStatement sm = null;
+        try {
+            sm = con.prepareStatement("{call DescargarSioNo("+a+","+Codigo.getText()+")}"); //,"+fecha.getDateFormatString()+"
+            sm.executeUpdate();
+        con.close();
+        
+        sm.close();
+        } catch (SQLException ex) {
+            System.out.println("ERROR ="+ex);
+        }}
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -176,6 +212,7 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
         Codigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Descri = new javax.swing.JTextField();
+        Descarga = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         cantidadin = new javax.swing.JTextField();
@@ -215,6 +252,13 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
         Descri.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Descri.setForeground(new java.awt.Color(51, 102, 255));
 
+        Descarga.setText("DESCARGA");
+        Descarga.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DescargaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -222,14 +266,20 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Descri)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(Descri)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Descarga)
+                        .addGap(27, 27, 27))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +287,9 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Descarga))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -355,6 +407,7 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
       Descri.setText(String.valueOf(ProInventario.getModel().getValueAt(ProInventario.getSelectedRow(), 1)));
       cantidadin.requestFocus();
         ListarIngresos();
+        EstadoDescarga();
         
     }//GEN-LAST:event_ProInventarioMouseClicked
 
@@ -370,10 +423,15 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
         imprimir();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void DescargaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DescargaMouseClicked
+        if(Descarga.isSelected()){JOptionPane.showMessageDialog(null, "DESCARGA");DescargarSioNo(1);}else{JOptionPane.showMessageDialog(null, "NO DESCARGA");DescargarSioNo(2);}
+    }//GEN-LAST:event_DescargaMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cargar;
     private javax.swing.JTextField Codigo;
+    private javax.swing.JCheckBox Descarga;
     private javax.swing.JTextField Descri;
     private javax.swing.JTable ProInventario;
     private javax.swing.JTextField cantidadin;

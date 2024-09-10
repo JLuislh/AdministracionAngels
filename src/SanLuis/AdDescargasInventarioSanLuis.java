@@ -15,14 +15,14 @@ import javax.swing.table.TableColumn;
  *
  * @author jluis
  */
-public class AdDescargasInventario extends javax.swing.JPanel {
+public class AdDescargasInventarioSanLuis extends javax.swing.JPanel {
      int idproductosinve =0;
      int codigo;
      String DescripcionProducto;
     /**
      * Creates new form AdDescargasInventario
      */
-    public AdDescargasInventario() {
+    public AdDescargasInventarioSanLuis() {
         initComponents();
         ListarProductosInventario();
         ListarInventario();

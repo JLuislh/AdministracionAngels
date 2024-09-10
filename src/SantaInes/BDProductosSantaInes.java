@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author jluis
  */
-public class BDProductos1 {
+public class BDProductosSantaInes {
     
     
     int a;
@@ -198,9 +198,9 @@ public class BDProductos1 {
     }*/
  
  
- /*
+ 
      public static InsertarProducto InsertarProductoDescargaInventario(InsertarProducto t) throws SQLException{
-        BDConexion conecta = new BDConexion();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         smtp =con.prepareStatement("insert into productosdescargas (codigo,idproductosinve,cantidadout,unidad_medida) values(?,?,?,?)");
@@ -217,7 +217,7 @@ public class BDProductos1 {
         return t;
     }
     
-     
+     /*
       public static InsertarProducto InsertarGastos(InsertarProducto t) throws SQLException{
         BDConexion conecta = new BDConexion();
         Connection con = conecta.getConexion();

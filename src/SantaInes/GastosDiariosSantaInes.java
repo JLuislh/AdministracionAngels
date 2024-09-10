@@ -17,12 +17,12 @@ import javax.swing.table.TableColumn;
  *
  * @author jluis
  */
-public class Gastos extends javax.swing.JPanel {
+public class GastosDiariosSantaInes extends javax.swing.JPanel {
   String Fecha;
     /**
      * Creates new form Gastos
      */
-    public Gastos() {
+    public GastosDiariosSantaInes() {
         initComponents();
     }
     

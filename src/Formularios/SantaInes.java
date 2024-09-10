@@ -4,9 +4,14 @@
  */
 package Formularios;
 
+import SantaInes.AdDescargasInventarioSantaInes;
+import SantaInes.AdProductosInventarioBebidasSantaInes;
+import SantaInes.AdProductosInventarioComidaSantaInes;
 import SantaInes.AdTotalEnCajaSantaInes;
 import SantaInes.DetalleOrdenesSantaInes;
-import SantaInes.ReporteMensual;
+import SantaInes.GastosSantaInes;
+import SantaInes.ListadeGastosSantaInes;
+import SantaInes.ReporteMensualSantaInes;
 import java.awt.BorderLayout;
 
 /**
@@ -44,9 +49,13 @@ public class SantaInes extends javax.swing.JPanel {
         panelRound5 = new ClasesAngels.PanelRound();
         jLabel6 = new javax.swing.JLabel();
         panelRound6 = new ClasesAngels.PanelRound();
-        jLabel7 = new javax.swing.JLabel();
-        panelRound7 = new ClasesAngels.PanelRound();
         jLabel8 = new javax.swing.JLabel();
+        panelRound7 = new ClasesAngels.PanelRound();
+        jLabel9 = new javax.swing.JLabel();
+        panelRound8 = new ClasesAngels.PanelRound();
+        jLabel7 = new javax.swing.JLabel();
+        panelRound9 = new ClasesAngels.PanelRound();
+        jLabel10 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1270, 644));
 
@@ -171,7 +180,7 @@ public class SantaInes extends javax.swing.JPanel {
         PanelSantaInes.setLayout(PanelSantaInesLayout);
         PanelSantaInesLayout.setHorizontalGroup(
             PanelSantaInesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1270, Short.MAX_VALUE)
+            .addGap(0, 1330, Short.MAX_VALUE)
         );
         PanelSantaInesLayout.setVerticalGroup(
             PanelSantaInesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,35 +223,6 @@ public class SantaInes extends javax.swing.JPanel {
         panelRound6.setRoundTopLeft(20);
         panelRound6.setRoundTopRight(20);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("ANULAR ORDEN");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelRound6Layout = new javax.swing.GroupLayout(panelRound6);
-        panelRound6.setLayout(panelRound6Layout);
-        panelRound6Layout.setHorizontalGroup(
-            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        panelRound6Layout.setVerticalGroup(
-            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        panelRound7.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound7.setPreferredSize(new java.awt.Dimension(140, 60));
-        panelRound7.setRoundBottomLeft(20);
-        panelRound7.setRoundBottomRight(20);
-        panelRound7.setRoundTopLeft(20);
-        panelRound7.setRoundTopRight(20);
-
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("REPORTE MENSUAL");
@@ -252,15 +232,96 @@ public class SantaInes extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout panelRound6Layout = new javax.swing.GroupLayout(panelRound6);
+        panelRound6.setLayout(panelRound6Layout);
+        panelRound6Layout.setHorizontalGroup(
+            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        panelRound6Layout.setVerticalGroup(
+            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        panelRound7.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound7.setPreferredSize(new java.awt.Dimension(140, 60));
+        panelRound7.setRoundBottomLeft(20);
+        panelRound7.setRoundBottomRight(20);
+        panelRound7.setRoundTopLeft(20);
+        panelRound7.setRoundTopRight(20);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("GASTOS");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRound7Layout = new javax.swing.GroupLayout(panelRound7);
         panelRound7.setLayout(panelRound7Layout);
         panelRound7Layout.setHorizontalGroup(
             panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         panelRound7Layout.setVerticalGroup(
             panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        panelRound8.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound8.setPreferredSize(new java.awt.Dimension(140, 60));
+        panelRound8.setRoundBottomLeft(20);
+        panelRound8.setRoundBottomRight(20);
+        panelRound8.setRoundTopLeft(20);
+        panelRound8.setRoundTopRight(20);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("REPORTE GASTOS");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelRound8Layout = new javax.swing.GroupLayout(panelRound8);
+        panelRound8.setLayout(panelRound8Layout);
+        panelRound8Layout.setHorizontalGroup(
+            panelRound8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        panelRound8Layout.setVerticalGroup(
+            panelRound8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        panelRound9.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound9.setPreferredSize(new java.awt.Dimension(140, 60));
+        panelRound9.setRoundBottomLeft(20);
+        panelRound9.setRoundBottomRight(20);
+        panelRound9.setRoundTopLeft(20);
+        panelRound9.setRoundTopRight(20);
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("DESCARGA MANUAL");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelRound9Layout = new javax.swing.GroupLayout(panelRound9);
+        panelRound9.setLayout(panelRound9Layout);
+        panelRound9Layout.setHorizontalGroup(
+            panelRound9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        panelRound9Layout.setVerticalGroup(
+            panelRound9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -282,7 +343,11 @@ public class SantaInes extends javax.swing.JPanel {
                 .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
             .addComponent(PanelSantaInes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -296,7 +361,9 @@ public class SantaInes extends javax.swing.JPanel {
                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelSantaInes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -305,9 +372,7 @@ public class SantaInes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1330, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,18 +383,18 @@ public class SantaInes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-      /*  CargaProductos_Pinula op2 = new CargaProductos_Pinula();
-        op2.setSize(1270, 528);
+         AdProductosInventarioComidaSantaInes op2 = new AdProductosInventarioComidaSantaInes();
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
         AdTotalEnCajaSantaInes op2 = new AdTotalEnCajaSantaInes();
-        op2.setSize(1270, 528);
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -339,7 +404,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         DetalleOrdenesSantaInes op2 = new DetalleOrdenesSantaInes();
-        op2.setSize(1270, 528);
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -348,56 +413,70 @@ public class SantaInes extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       /* EliminarPedido_Pinula op2 = new EliminarPedido_Pinula();
-        op2.setSize(1270, 528);
+        AdProductosInventarioBebidasSantaInes op2 = new AdProductosInventarioBebidasSantaInes();
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        /*SinFelPinula op2 = new SinFelPinula();
-        op2.setSize(1270, 528);
+       AdDescargasInventarioSantaInes op2 = new AdDescargasInventarioSantaInes();
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-
-        /*OrdenesFacturadasPinula op2 = new OrdenesFacturadasPinula();
-        op2.setSize(1270, 528);
+        ListadeGastosSantaInes op2 = new ListadeGastosSantaInes();
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
-        PanelPinula.removeAll();
-        PanelPinula.add(op2,BorderLayout.CENTER);
-        PanelPinula.revalidate();
-        PanelPinula.repaint();*/
-    }//GEN-LAST:event_jLabel7MouseClicked
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();    }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        ReporteMensual op2 = new ReporteMensual();
-        op2.setSize(1270, 528);
+        ReporteMensualSantaInes op2 = new ReporteMensualSantaInes();
+        op2.setSize(1330, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
         PanelSantaInes.revalidate();
         PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        GastosSantaInes op2 = new GastosSantaInes();
+        op2.setSize(1330, 572);
+        op2.setLocation(0, 0);
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel10MouseClicked
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelSantaInes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private ClasesAngels.PanelRound panelRound1;
     private ClasesAngels.PanelRound panelRound2;
@@ -406,5 +485,7 @@ public class SantaInes extends javax.swing.JPanel {
     private ClasesAngels.PanelRound panelRound5;
     private ClasesAngels.PanelRound panelRound6;
     private ClasesAngels.PanelRound panelRound7;
+    private ClasesAngels.PanelRound panelRound8;
+    private ClasesAngels.PanelRound panelRound9;
     // End of variables declaration//GEN-END:variables
 }
