@@ -6,6 +6,7 @@ package SantaInes;
 
 import SanLuis.*;
 import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -35,7 +36,7 @@ public class GastosSantaInes extends javax.swing.JPanel {
     
      private void ListarCuentas() {
 
-        ArrayList<InsertarProducto> result = BDGastosSanLuis.ListarCuentas();
+        ArrayList<InsertarProducto> result = BDGastosSantaInes.ListarCuentas();
         RecargarTabla(result);
     }
 
@@ -70,7 +71,7 @@ public class GastosSantaInes extends javax.swing.JPanel {
 
     public void New_Cuenta() throws SQLException {
 
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         PreparedStatement smtp;
         try (Connection con = conecta.getConexion()) {
             smtp = null;
@@ -87,7 +88,7 @@ public class GastosSantaInes extends javax.swing.JPanel {
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
         Fechain = df.format(Fecha.getDate());
         //int Fecha = Fecha.getDate();
-         BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+         BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         PreparedStatement smtp;
         try (Connection con = conecta.getConexion()) {
             smtp = null; //(id_cuenta,descripcion,precio,cantida,estado,FECHA
@@ -282,7 +283,7 @@ public class GastosSantaInes extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -291,12 +292,12 @@ public class GastosSantaInes extends javax.swing.JPanel {
                         .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -304,7 +305,7 @@ public class GastosSantaInes extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(NEWCUENTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55))
+                .addGap(28, 28, 28))
         );
     }// </editor-fold>//GEN-END:initComponents
 

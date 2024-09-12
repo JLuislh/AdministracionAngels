@@ -4,7 +4,6 @@
  */
 package SanLuis;
 
-import SantaInes.*;
 import BDclass.BDOrdenes;
 import ClasesAngels.BDConexion_SanLuis;
 import ClasesAngels.BDConexion_SantaInes;
@@ -36,8 +35,10 @@ import net.sf.jasperreports.engine.util.JRLoader;
  */
 public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
     String Fecha;
-    int ID_TOTAL;
     int cantidadOrdenes;
+    Double SUMATOTAL;
+    int ID_TOTAL;
+    String Fechagastos;
     /**
      * Creates new form TotalEnCaja
      */
@@ -69,7 +70,13 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
         TRANFERENCIA = new javax.swing.JTextField();
         TARJETA = new javax.swing.JTextField();
         EFECTIVO = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        GASTOS = new javax.swing.JTextField();
+        EFECTIVOMENOSGASTOS = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Gast = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1024, 635));
 
@@ -115,6 +122,15 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("TRANSFERENCIA");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("GASTOS");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("TOTAL EFECTIVO MENOS GASTOS");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ComponenteImagenes/Print.png"))); // NOI18N
         jButton2.setText("IMPRIMIR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,24 +145,28 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Total)
-                    .addComponent(TARJETA)
-                    .addComponent(EFECTIVO)
                     .addComponent(Noordenes)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TARJETA)
                     .addComponent(TRANFERENCIA)
+                    .addComponent(GASTOS)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(EFECTIVO)
+                    .addComponent(Total, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EFECTIVOMENOSGASTOS))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,22 +179,40 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EFECTIVO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TARJETA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TRANFERENCIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GASTOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EFECTIVOMENOSGASTOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Gast.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "GASTOS", "TOTAL"
+            }
+        ));
+        jScrollPane2.setViewportView(Gast);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -190,8 +228,10 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(234, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,9 +242,10 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
-                .addContainerGap(209, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -252,7 +293,7 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
         
          DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
          Fecha = df.format(Fe.getDate());
-     
+         
         ArrayList<InsertarProducto> result = BDOrdenes.OrdenesSanLuis(Fecha);
         RecargarTablaDetallado(result);  
     }
@@ -286,20 +327,28 @@ public class AdTotalEnCajaSanLuis extends javax.swing.JPanel {
              columna2.setPreferredWidth(275);
              TableColumn columna3 = OrdenesDia.getColumn("TOTAL");
              columna3.setPreferredWidth(35);
-           BuscarTotal();
+             BuscarTotal();
      }
      
      private void BuscarTotal(){
-     DecimalFormat df = new DecimalFormat("#0.00");
+            SumaTotalGastos();
+            DecimalFormat df = new DecimalFormat("#0.00");
         
 try {
             InsertarProducto c = BDOrdenes.BuscarTotalSanLuis(Fecha);
             Noordenes.setText(String.valueOf(c.getNoOrden()));
             EFECTIVO.setText(String.valueOf(df.format(c.getEfectivo())));
+            Double e = (Double.parseDouble(df.format(c.getEfectivo())));
+            Double f = (Double.parseDouble(df.format(SUMATOTAL)));   
+            Double Resultado2 = e-f;
+            EFECTIVOMENOSGASTOS.setText((df.format(Resultado2)));
             TARJETA.setText(String.valueOf(df.format(c.getTarjeta())));
             TRANFERENCIA.setText(String.valueOf(df.format(c.getTransferencia())));
-            Total.setText(String.valueOf(df.format(c.getTotal())));
-          
+            GASTOS.setText(String.valueOf(SUMATOTAL));
+           // Double a = (Double.parseDouble(df.format(c.getTotal())));
+           // Double b = (Double.parseDouble(df.format(SUMATOTAL)));   
+           // Double Resultado = a-b;
+            Total.setText((df.format(c.getTotal())));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error mas"+e);
         } 
@@ -324,7 +373,65 @@ try {
             }
         }
       
-       public void IngresoVentaDia() throws SQLException{
+      public void SumaTotalGastos() {
+          
+         
+            try {
+                BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+                Connection cn = conecta.getConexion();
+                java.sql.Statement stmt = cn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT sum(Precio) as TotalGasto FROM GASTOSDIARIOS WHERE date_format(FECHA,'%d/%m/%Y') ='"+Fecha+"'");
+                while (rs.next()) {
+                      SUMATOTAL = rs.getDouble(1);
+                   // Total.setText(String.valueOf(TOTAL));
+                }
+                rs.close();
+                stmt.close();
+                cn.close();
+            } catch (Exception error) {
+                System.out.print(error);
+            }
+            ListarGastos();
+        }
+    
+      private void ListarGastos(){
+        
+        
+          System.out.println(Fecha);
+        ArrayList<InsertarProducto> result = BDIngresosSanLuis.ListarGastosTotal(Fecha);
+        RecargarGas(result);  
+    }
+     private void RecargarGas(ArrayList<InsertarProducto> list) {
+              Object[][] datos = new Object[list.size()][2];
+              int i = 0;
+              for(InsertarProducto t : list)
+              {
+                  datos[i][0] = t.getDescripcion();
+                  datos[i][1] = t.getTotal();
+                
+                  i++;
+              }    
+             Gast.setModel(new javax.swing.table.DefaultTableModel(
+                datos,
+                new String[]{
+                "GASTO","TOTAL"
+             })
+             {  
+                 @Override
+                 public boolean isCellEditable(int row, int column){
+                 return false;
+
+             }
+             });
+             Gast.getColumnModel().getColumn(1).setCellRenderer(new TextAreaRenderer());
+             TableColumn columna1 = Gast.getColumn("GASTO");
+             columna1.setPreferredWidth(75);
+             TableColumn columna2 = Gast.getColumn("TOTAL");
+             columna2.setPreferredWidth(25);
+     }
+     
+     
+      public void IngresoVentaDia() throws SQLException{
         DateFormat f = new SimpleDateFormat("yyyy/MM/dd");
         String F = f.format(Fe.getDate());
         ValidarVentaDia();
@@ -366,10 +473,12 @@ try {
         } 
     
     
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EFECTIVO;
+    private javax.swing.JTextField EFECTIVOMENOSGASTOS;
     private com.toedter.calendar.JDateChooser Fe;
+    private javax.swing.JTextField GASTOS;
+    private javax.swing.JTable Gast;
     private javax.swing.JTextField Noordenes;
     private javax.swing.JTable OrdenesDia;
     private javax.swing.JTextField TARJETA;
@@ -382,7 +491,10 @@ try {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

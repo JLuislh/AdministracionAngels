@@ -39,7 +39,7 @@ public class AdDescargasInventarioSanLuis extends javax.swing.JPanel {
     
      private void ListarProductosInventario(){
      
-        ArrayList<InsertarProducto> result = BDIngresos.ListarProductosVenta();
+        ArrayList<InsertarProducto> result = BDIngresosSanLuis.ListarProductosVenta();
         RecargarTabla(result);  
     }
      private void RecargarTabla(ArrayList<InsertarProducto> list) {
@@ -77,7 +77,7 @@ public class AdDescargasInventarioSanLuis extends javax.swing.JPanel {
      private void ListarProductosDescarga(){
         int codigo = (int) (Producto.getModel().getValueAt(Producto.getSelectedRow(), 0));
         DescripcionProducto = (String) (Producto.getModel().getValueAt(Producto.getSelectedRow(), 1));
-        ArrayList<InsertarProducto> result = BDIngresos.ListarProductosDescargasVentas(codigo);
+        ArrayList<InsertarProducto> result = BDIngresosSanLuis.ListarProductosDescargasVentas(codigo);
         RecargarTablaDesc(result);  
     }
      private void RecargarTablaDesc(ArrayList<InsertarProducto> list) {
@@ -114,7 +114,7 @@ public class AdDescargasInventarioSanLuis extends javax.swing.JPanel {
      
       private void ListarInventario(){
        // int codigo = (int) (Producto.getModel().getValueAt(Producto.getSelectedRow(), 0));
-        ArrayList<InsertarProducto> result = BDIngresos.ProductosInventario();
+        ArrayList<InsertarProducto> result = BDIngresosSanLuis.ProductosInventario();
         RecargarTablaInven(result);  
     }
      private void RecargarTablaInven(ArrayList<InsertarProducto> list) {

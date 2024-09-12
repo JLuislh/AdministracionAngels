@@ -4,8 +4,7 @@
  */
 package SantaInes;
 
-import SanLuis.*;
-import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,7 +21,7 @@ public class BDGastosSantaInes {
  }  
     private static ArrayList<InsertarProducto> cuentas(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -48,7 +47,7 @@ public class BDGastosSantaInes {
  }  
     private static ArrayList<InsertarProducto> gastos(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {

@@ -182,6 +182,34 @@ public static ArrayList<InsertarProducto> ProductosVentasDetallado(String Fecha)
         return list;
 }
     
+ public static ArrayList<InsertarProducto> OrdenesSanLuis(String Fecha) {
+        return OrderLuis("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderLuis(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setNoOrden(rs.getInt("noorden"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 t.setFecha(rs.getString("FECHA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}    
+    
 public static ArrayList<InsertarProducto> DetalleOrdenesSantaInes(int orden) {
         return OrderDetalle("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    
  }  
@@ -211,7 +239,7 @@ public static ArrayList<InsertarProducto> DetalleOrdenesSantaInes(int orden) {
         return list;
 }    
     
- public static ArrayList<InsertarProducto> OrdenesSanLuis(String Fecha) {
+ /*public static ArrayList<InsertarProducto> OrdenesSanLuis(String Fecha) {
         return OrderSanLuis("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
  }  
 
@@ -237,7 +265,7 @@ public static ArrayList<InsertarProducto> DetalleOrdenesSantaInes(int orden) {
             return null;
         } 
         return list;
-}
+}*/
 
 public static ArrayList<InsertarProducto> DetalleOrdenesSanLuis(int orden) {
         return OrderDetalleSanLuis("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    

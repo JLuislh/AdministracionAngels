@@ -12,7 +12,6 @@ import SanLuis.DetalleOrdenesSanLuis;
 import SanLuis.GastosSanLuis;
 import SanLuis.ListadeGastosSanLuis;
 import SanLuis.ReporteMensualSanLuis;
-import SantaInes.DetalleOrdenesSantaInes;
 import java.awt.BorderLayout;
 
 /**
@@ -395,7 +394,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
     AdTotalEnCajaSanLuis op2 = new AdTotalEnCajaSanLuis();
-    op2.setSize(1330, 572);
+    op2.setSize(1124, 496);
     op2.setLocation(0, 0);
     PanelSanLuis.removeAll();
     PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -405,7 +404,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
     DetalleOrdenesSanLuis op2 = new DetalleOrdenesSanLuis();
-    op2.setSize(1330, 572);
+    op2.setSize(1124, 572);
     op2.setLocation(0, 0);
     PanelSanLuis.removeAll();
     PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -415,7 +414,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
     AdDescargasInventarioSanLuis op2 = new AdDescargasInventarioSanLuis();
-    op2.setSize(1330, 572);
+    op2.setSize(1124, 572);
     op2.setLocation(0, 0);
     PanelSanLuis.removeAll();
     PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -425,7 +424,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         ListadeGastosSanLuis op2 = new ListadeGastosSanLuis();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 496);
         op2.setLocation(0, 0);
         PanelSanLuis.removeAll();
         PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -435,7 +434,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
       GastosSanLuis op2 = new GastosSanLuis();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 496);
         op2.setLocation(0, 0);
         PanelSanLuis.removeAll();
         PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -445,7 +444,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
     ReporteMensualSanLuis op2 = new ReporteMensualSanLuis();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSanLuis.removeAll();
         PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -455,7 +454,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
     AdProductosInventarioComida op2 = new AdProductosInventarioComida();
-    op2.setSize(1330, 572);
+    op2.setSize(1124, 572);
     op2.setLocation(0, 0);
     PanelSanLuis.removeAll();
     PanelSanLuis.add(op2,BorderLayout.CENTER);
@@ -465,7 +464,7 @@ public class SanLuis extends javax.swing.JPanel {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
     AdProductosInventarioBebidas op2 = new AdProductosInventarioBebidas();
-    op2.setSize(1330, 572);
+    op2.setSize(1124, 572);
     op2.setLocation(0, 0);
     PanelSanLuis.removeAll();
     PanelSanLuis.add(op2,BorderLayout.CENTER);

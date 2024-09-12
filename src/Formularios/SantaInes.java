@@ -8,6 +8,7 @@ import SantaInes.AdDescargasInventarioSantaInes;
 import SantaInes.AdProductosInventarioBebidasSantaInes;
 import SantaInes.AdProductosInventarioComidaSantaInes;
 import SantaInes.AdTotalEnCajaSantaInes;
+import SantaInes.AdTotalEnCajaSantaInesBK;
 import SantaInes.DetalleOrdenesSantaInes;
 import SantaInes.GastosSantaInes;
 import SantaInes.ListadeGastosSantaInes;
@@ -384,7 +385,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
          AdProductosInventarioComidaSantaInes op2 = new AdProductosInventarioComidaSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -394,7 +395,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
         AdTotalEnCajaSantaInes op2 = new AdTotalEnCajaSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -404,7 +405,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         DetalleOrdenesSantaInes op2 = new DetalleOrdenesSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -414,7 +415,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         AdProductosInventarioBebidasSantaInes op2 = new AdProductosInventarioBebidasSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -424,7 +425,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
        AdDescargasInventarioSantaInes op2 = new AdDescargasInventarioSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -434,7 +435,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         ListadeGastosSantaInes op2 = new ListadeGastosSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 496);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -443,7 +444,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         ReporteMensualSantaInes op2 = new ReporteMensualSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 572);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);
@@ -453,7 +454,7 @@ public class SantaInes extends javax.swing.JPanel {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         GastosSantaInes op2 = new GastosSantaInes();
-        op2.setSize(1330, 572);
+        op2.setSize(1124, 496);
         op2.setLocation(0, 0);
         PanelSantaInes.removeAll();
         PanelSantaInes.add(op2,BorderLayout.CENTER);

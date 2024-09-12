@@ -5,8 +5,7 @@
 package SantaInes;
 
 
-import SanLuis.*;
-import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
 import java.sql.Connection;
@@ -38,7 +37,7 @@ public class ListadeGastosSantaInes extends javax.swing.JPanel {
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
         Fechain = df.format(Fecha1.getDate());
         FechaFin = df.format(Fecha2.getDate());
-        ArrayList<InsertarProducto> result = BDGastosSanLuis.ListarGastos(Fechain, FechaFin);
+        ArrayList<InsertarProducto> result = BDGastosSantaInes.ListarGastos(Fechain, FechaFin);
         RecargarTabla(result);
     }
 
@@ -85,7 +84,7 @@ public class ListadeGastosSantaInes extends javax.swing.JPanel {
         Fechain = df.format(Fecha1.getDate());
         FechaFin = df.format(Fecha2.getDate());
             try {
-                BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+                BDConexion_SantaInes conecta = new BDConexion_SantaInes();
                 Connection cn = conecta.getConexion();
                 java.sql.Statement stmt = cn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT sum(Precio) as Total FROM GASTOS WHERE fecha BETWEEN '"+Fechain+"' and '"+FechaFin+"'");

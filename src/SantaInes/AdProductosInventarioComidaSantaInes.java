@@ -56,7 +56,7 @@ public class AdProductosInventarioComidaSantaInes extends javax.swing.JPanel {
     
     private void ListarProductosInventario(){
      
-        ArrayList<InsertarProducto> result = BDIngresos.BDIngresosProductosInventarioComida();
+        ArrayList<InsertarProducto> result = BDIngresosSantaInes.BDIngresosProductosInventarioComida();
         RecargarTabla(result);  
     }
      private void RecargarTabla(ArrayList<InsertarProducto> list) {

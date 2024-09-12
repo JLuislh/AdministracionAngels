@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package SanLuis;
+package SantaInes;
 
-import ClasesAngels.BDConexion_SanLuis;
+import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import java.sql.*;
 import java.sql.Connection;
@@ -20,7 +20,7 @@ public class BDIngresos {
     
     
     public static InsertarProducto InsertarProducto_Pedido(InsertarProducto t) throws SQLException{
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         smtp =con.prepareStatement("insert into ventas (noorden,codigo,cantidad,total,estado) values(?,?,1,(select precio from productos where codigo =  "+t.getId_producto()+" ),1) ",Statement.RETURN_GENERATED_KEYS);
@@ -42,7 +42,7 @@ public class BDIngresos {
     }
     
     public static InsertarProducto InsertarProducto_PedidoCervezaCubetazo(InsertarProducto t) throws SQLException{
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -68,7 +68,7 @@ public class BDIngresos {
     }
     
     public static InsertarProducto InsertarProducto_PedidoCervezaUnidad(InsertarProducto t) throws SQLException{
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -95,7 +95,7 @@ public class BDIngresos {
     
     
      public static InsertarProducto InsertarProducto_PedidoBotellas(InsertarProducto t) throws SQLException{
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
         Connection con = conecta.getConexion();
         PreparedStatement smtp = null;
         PreparedStatement sm = null;
@@ -128,7 +128,7 @@ public class BDIngresos {
 
 private static ArrayList<InsertarProducto> SQL3(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -159,7 +159,7 @@ private static ArrayList<InsertarProducto> SQL3(String sql){
 
 private static ArrayList<InsertarProducto> SQLP(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -189,7 +189,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
     
     public static InsertarProducto buscarPromo(int a, InsertarProducto c) throws SQLException {
              
-            BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+            BDConexion_SantaInes conecta = new BDConexion_SantaInes();
             Connection cn = conecta.getConexion();
             PreparedStatement ps = null;
             ps = cn.prepareStatement("select codigo,descripcion,precio,status from productos where codigo = "+a);
@@ -212,7 +212,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 }
     
     public static void UpdatePromo(InsertarProducto t) throws SQLException{
-            BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+            BDConexion_SantaInes conecta = new BDConexion_SantaInes();
             Connection con = conecta.getConexion();
         PreparedStatement ps = null;
         ps = con.prepareStatement("UPDATE PRODUCTOS SET DESCRIPCION = ?,PRECIO = ?,STATUS = ? WHERE CODIGO ="+t.getCodigo());
@@ -238,7 +238,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> Inven(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -271,7 +271,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> venta(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -304,7 +304,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> ventaDeta(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -336,7 +336,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> Order(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -367,7 +367,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
     
     public static InsertarProducto buscarTotal(String a, InsertarProducto c) throws SQLException {
              
-            BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+            BDConexion_SantaInes conecta = new BDConexion_SantaInes();
             Connection cn = conecta.getConexion();
             PreparedStatement ps = null;
             ps = cn.prepareStatement("select SUM(TOTAL) AS TOTAL, count(*) as ORDENES from ordenes where date_format(fecha,'%d/%m/%Y' )  = '"+a+"';");
@@ -395,7 +395,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> Vent(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -423,7 +423,7 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 
     private static ArrayList<InsertarProducto> VentDesc(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -454,7 +454,7 @@ public static ArrayList<InsertarProducto>ListadeIngresos (int a) {
 
     private static ArrayList<InsertarProducto> in(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -482,7 +482,7 @@ public static ArrayList<InsertarProducto>ListadeIngresos (int a) {
 
     private static ArrayList<InsertarProducto> Invent(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -511,7 +511,7 @@ public static ArrayList<InsertarProducto>ListadeIngresos (int a) {
 
     private static ArrayList<InsertarProducto> gasto(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -542,7 +542,7 @@ public static ArrayList<InsertarProducto>ListadeIngresos (int a) {
 
     private static ArrayList<InsertarProducto> gastototal(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -575,7 +575,7 @@ public static ArrayList<InsertarProducto>ListaProductosBodegaPrincipal () {
 
     private static ArrayList<InsertarProducto> BPin(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
@@ -606,7 +606,7 @@ public static ArrayList<InsertarProducto>ListaHistorialIngresosDescargas (int a,
 
     private static ArrayList<InsertarProducto> BPout(String sql){
     ArrayList<InsertarProducto> list = new ArrayList<>();
-        BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {
