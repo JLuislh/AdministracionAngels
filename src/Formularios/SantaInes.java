@@ -8,7 +8,6 @@ import SantaInes.AdDescargasInventarioSantaInes;
 import SantaInes.AdProductosInventarioBebidasSantaInes;
 import SantaInes.AdProductosInventarioComidaSantaInes;
 import SantaInes.AdTotalEnCajaSantaInes;
-import SantaInes.AdTotalEnCajaSantaInesBK;
 import SantaInes.DetalleOrdenesSantaInes;
 import SantaInes.GastosSantaInes;
 import SantaInes.ListadeGastosSantaInes;
