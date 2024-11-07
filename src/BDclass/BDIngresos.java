@@ -9,7 +9,6 @@ import ClassAngels.InsertarProducto;
 import java.sql.*;
 import java.sql.Connection;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
