@@ -286,7 +286,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     Inicio.revalidate();
     Inicio.repaint();
     CambiarBodes();
-    Encuentro.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
+    faro.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked

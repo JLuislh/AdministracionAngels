@@ -15,53 +15,51 @@ public class ClassProductos {
     private String Unidad;
     private int id_pedido;
     private String Fechain;
-    private int Csantaines;
-    private int Cpuertanegra;
-    private int Cparaiso;
-    private int Cpalencia;
-    private int CResi;
+    private String Csantaines;
+    private String Cpuertanegra;
+    private String Cparaiso;
+    private String Cpalencia;
+    private String CResi;
 
-    public int getCsantaines() {
+    public String getCsantaines() {
         return Csantaines;
     }
 
-    public void setCsantaines(int Csantaines) {
+    public void setCsantaines(String Csantaines) {
         this.Csantaines = Csantaines;
     }
 
-    public int getCpuertanegra() {
+    public String getCpuertanegra() {
         return Cpuertanegra;
     }
 
-    public void setCpuertanegra(int Cpuertanegra) {
+    public void setCpuertanegra(String Cpuertanegra) {
         this.Cpuertanegra = Cpuertanegra;
     }
 
-    public int getCparaiso() {
+    public String getCparaiso() {
         return Cparaiso;
     }
 
-    public void setCparaiso(int Cparaiso) {
+    public void setCparaiso(String Cparaiso) {
         this.Cparaiso = Cparaiso;
     }
 
-    public int getCpalencia() {
+    public String getCpalencia() {
         return Cpalencia;
     }
 
-    public void setCpalencia(int Cpalencia) {
+    public void setCpalencia(String Cpalencia) {
         this.Cpalencia = Cpalencia;
     }
 
-    public int getCResi() {
+    public String getCResi() {
         return CResi;
     }
 
-    public void setCResi(int CResi) {
+    public void setCResi(String CResi) {
         this.CResi = CResi;
     }
-    
-    
 
     public int getId_pedido() {
         return id_pedido;

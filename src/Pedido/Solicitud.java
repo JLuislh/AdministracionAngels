@@ -496,11 +496,11 @@ public class Solicitud extends javax.swing.JPanel {
             ClassProductos p = new ClassProductos();
             p.setId_pedido(Integer.parseInt(NoPedido.getText()));
             p.setId_producto(id_productoin);
-            p.setCsantaines(Integer.parseInt(cantidad1.getText()));
-            p.setCpuertanegra(Integer.parseInt(cantidad2.getText()));
-            p.setCparaiso(Integer.parseInt(cantidad3.getText()));
-            p.setCpalencia(Integer.parseInt(cantidad4.getText()));
-            p.setCResi(Integer.parseInt(cantidad5.getText()));
+            p.setCsantaines(cantidad1.getText());
+            p.setCpuertanegra(cantidad2.getText());
+            p.setCparaiso(cantidad3.getText());
+            p.setCpalencia(cantidad4.getText());
+            p.setCResi(cantidad5.getText());
             BDIngresosConsultas.ActualizarCantidad(p);
             JOptionPane.showMessageDialog(null, "Cantidad Actualizadas");
         } catch (NumberFormatException | SQLException ex) {

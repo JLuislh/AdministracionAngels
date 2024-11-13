@@ -4,7 +4,10 @@
  */
 package Pedido;
 
+import ClasesAngels.BDConexion_server;
 import ClassAngels.TextAreaRenderer;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -498,11 +501,11 @@ public class ActualizarPedido extends javax.swing.JPanel {
             ClassProductos p = new ClassProductos();
             p.setId_pedido(Integer.parseInt(NoPedido.getText()));
             p.setId_producto(id_productoin);
-            p.setCsantaines(Integer.parseInt(cantidad1.getText()));
-            p.setCpuertanegra(Integer.parseInt(cantidad2.getText()));
-            p.setCparaiso(Integer.parseInt(cantidad3.getText()));
-            p.setCpalencia(Integer.parseInt(cantidad4.getText()));
-            p.setCResi(Integer.parseInt(cantidad5.getText()));
+            p.setCsantaines(cantidad1.getText());
+            p.setCpuertanegra(cantidad2.getText());
+            p.setCparaiso(cantidad3.getText());
+            p.setCpalencia(cantidad4.getText());
+            p.setCResi(cantidad5.getText());
             BDIngresosConsultas.ActualizarCantidad(p);
             JOptionPane.showMessageDialog(null, "Cantidad Actualizadas");
         } catch (NumberFormatException | SQLException ex) {
@@ -580,6 +583,22 @@ public class ActualizarPedido extends javax.swing.JPanel {
         }else{JOptionPane.showMessageDialog(null, "Ingrese Una Fecha o Seleccione Un Trabajo");}
      
      }
+     
+     
+     private void eliminarproducto(){
+        id_productoin = (Integer.parseInt(String.valueOf(Solicitado.getModel().getValueAt(Solicitado.getSelectedRow(), 0))));
+        try {
+            BDConexion_server conecta = new BDConexion_server();
+            Connection con = conecta.getConexion();
+            PreparedStatement ps = null;
+            ps= con.prepareStatement("delete  from PRODUCTOS_PEDIDO  where ID_PRODUCTO ="+id_productoin+" and id_pedido ="+NoPedido.getText());
+            ps.executeUpdate();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null,"ERROR = "+ex);
+        }
+ }
     
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
        if(Descripcion.getText().compareTo("")!=0){
@@ -599,6 +618,8 @@ public class ActualizarPedido extends javax.swing.JPanel {
         id_productoin = (Integer.parseInt(String.valueOf(Solicitado.getModel().getValueAt(Solicitado.getSelectedRow(), 0))));
         Buscarinformacion();
         cantidad1.requestFocus();
+        
+        if (evt.getClickCount() > 2) {eliminarproducto();ListarProductos();ListarProductosSolicitados();}
         
     }//GEN-LAST:event_SolicitadoMouseClicked
 
