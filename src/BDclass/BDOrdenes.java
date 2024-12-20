@@ -4,6 +4,8 @@
  */
 package BDclass;
 
+import ClasesAngels.BDConexion_Palencia;
+import ClasesAngels.BDConexion_Residenciales;
 import ClasesAngels.BDConexion_SanLuis;
 import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
@@ -237,7 +239,63 @@ public static ArrayList<InsertarProducto> DetalleOrdenesSantaInes(int orden) {
             return null;
         } 
         return list;
+}
+
+public static ArrayList<InsertarProducto> OrdenesResidenciales(String Fecha) {
+        return OrderRe("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderRe(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_Residenciales conecta = new BDConexion_Residenciales();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setNoOrden(rs.getInt("noorden"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 t.setFecha(rs.getString("FECHA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
 }    
+
+public static ArrayList<InsertarProducto> OrdenesPalencia(String Fecha) {
+        return OrderPalencia("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderPalencia(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_Palencia conecta = new BDConexion_Palencia();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setNoOrden(rs.getInt("noorden"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 t.setFecha(rs.getString("FECHA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}        
     
  /*public static ArrayList<InsertarProducto> OrdenesSanLuis(String Fecha) {
         return OrderSanLuis("select noorden,Total,Fecha from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y')  ='"+Fecha+"'");    
@@ -295,7 +353,64 @@ public static ArrayList<InsertarProducto> DetalleOrdenesSanLuis(int orden) {
         } 
         return list;
 }    
+
+public static ArrayList<InsertarProducto> DetalleOrdenesResi(int orden) {
+        return OrderDetalleResi("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderDetalleResi(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_Residenciales conecta = new BDConexion_Residenciales();
+    Connection cn = conecta.getConexion();
     
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("codigo"));
+                 t.setDescripcion(rs.getString("Descripcion"));
+                 t.setCantidad(rs.getInt("cantidad")); 
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}
+    
+public static ArrayList<InsertarProducto> DetalleOrdenesPalencia(int orden) {
+        return OrderDetallePalencia("SELECT p.codigo,concat(upper(DESCRIPCION1),' ',upper(DESCRIPCION2),' ',precio) as Descripcion,cantidad,TOTAL FROM angels.ventas v INNER join productos p ON v.CODIGO = p.CODIGO WHERE NOORDEN ="+orden);    
+ }  
+
+    private static ArrayList<InsertarProducto> OrderDetallePalencia (String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+        BDConexion_Palencia conecta = new BDConexion_Palencia();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("codigo"));
+                 t.setDescripcion(rs.getString("Descripcion"));
+                 t.setCantidad(rs.getInt("cantidad")); 
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}        
     
 public static InsertarProducto BuscarTotalSantaInes(String a) throws SQLException{
         return buscarTotalSantaines(a ,null);
@@ -351,6 +466,61 @@ public static InsertarProducto BuscarTotalSanLuis(String a) throws SQLException{
             return c;
 }    
 
+    
+public static InsertarProducto BuscarTotalResidenciales(String a) throws SQLException{
+        return buscarTotalResi(a ,null);
+    }
+    
+    public static InsertarProducto buscarTotalResi(String a, InsertarProducto c) throws SQLException {
+             
+            BDConexion_Residenciales conecta = new BDConexion_Residenciales();
+            Connection cn = conecta.getConexion();
+            PreparedStatement ps = null;
+            ps = cn.prepareStatement("select SUM(TOTAL) AS TOTAL,SUM(efectivo) AS efectivo,SUM(Tarjeta) AS Tarjeta,SUM(transferencia) AS transferencia, count(*) as ORDENES from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y' )  = '"+a+"';");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next())
+            {
+               if (c==null)
+               {c = new InsertarProducto(){};}
+               c.setNoOrden(rs.getInt("ORDENES"));
+               c.setTotal(rs.getDouble("TOTAL"));
+               c.setEfectivo(rs.getDouble("efectivo"));
+               c.setTransferencia(rs.getDouble("transferencia"));
+               c.setTarjeta(rs.getDouble("Tarjeta"));
+               
+            }
+            cn.close();
+            ps.close();
+            return c;
+}    
+
+
+public static InsertarProducto BuscarTotalPalencia(String a) throws SQLException{
+        return buscarTotalPalencia(a ,null);
+    }
+    
+    public static InsertarProducto buscarTotalPalencia(String a, InsertarProducto c) throws SQLException {
+             
+            BDConexion_Palencia conecta = new BDConexion_Palencia();
+            Connection cn = conecta.getConexion();
+            PreparedStatement ps = null;
+            ps = cn.prepareStatement("select SUM(TOTAL) AS TOTAL,SUM(efectivo) AS efectivo,SUM(Tarjeta) AS Tarjeta,SUM(transferencia) AS transferencia, count(*) as ORDENES from ordenes where estado = 2 and date_format(fecha,'%d/%m/%Y' )  = '"+a+"';");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next())
+            {
+               if (c==null)
+               {c = new InsertarProducto(){};}
+               c.setNoOrden(rs.getInt("ORDENES"));
+               c.setTotal(rs.getDouble("TOTAL"));
+               c.setEfectivo(rs.getDouble("efectivo"));
+               c.setTransferencia(rs.getDouble("transferencia"));
+               c.setTarjeta(rs.getDouble("Tarjeta"));
+               
+            }
+            cn.close();
+            ps.close();
+            return c;
+}        
 
 
 /*

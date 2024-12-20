@@ -77,6 +77,42 @@ public static ArrayList<ClassProductos> ListarProductosSolicitados(int p) {
         } 
         return list;
 }    
+    
+public static ArrayList<ClassProductos> ListarProductosSolicitadosV2(int p) {
+        return ProV2("SELECT pp.id_producto,p.descripcion,p.medida,COALESCE(C_SANTAINES,0) as C_SANTAINES,COALESCE(C_PUERTANE,0) as C_PUERTANE,COALESCE(C_PARAISO,0) as C_PARAISO,COALESCE(C_PALENCIA,0) as C_PALENCIA,COALESCE(C_RESIDENCIALES,0) as C_RESIDENCIALES FROM PRODUCTOS p inner join productos_pedido pp on p.ID_PRODUCTO = pp.id_producto  WHERE  pp.ID_PEDIDO = "+p+" order by familia,DESCRIPCION;");    
+ }
+public static ArrayList<ClassProductos> ListarProductosSolicitadosV2Re(int p) {
+        return ProV2("SELECT pp.id_producto,p.descripcion,p.medida,COALESCE(R_SANTAINES,0) as C_SANTAINES,COALESCE(R_PUERTANE,0) as C_PUERTANE,COALESCE(R_PARAISO,0) as C_PARAISO,COALESCE(R_PALENCIA,0) as C_PALENCIA,COALESCE(R_RESIDENCIALES,0) as C_RESIDENCIALES FROM PRODUCTOS p inner join productos_pedido pp on p.ID_PRODUCTO = pp.id_producto  WHERE  pp.ID_PEDIDO = "+p+" order by familia,DESCRIPCION;");    
+ } 
+
+    private static ArrayList<ClassProductos> ProV2(String sql){
+    ArrayList<ClassProductos> list = new ArrayList<>();
+    BDConexion_server conecta = new BDConexion_server();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            ClassProductos t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new ClassProductos();
+                 t.setId_producto(rs.getInt("id_producto"));
+                 t.setDescripcion(rs.getString("Descripcion"));
+                 t.setUnidad(rs.getString("Medida"));
+                 t.setCsantaines(rs.getString("C_SANTAINES"));
+                 t.setCResi(rs.getString("C_RESIDENCIALES"));
+                 t.setCpuertanegra(rs.getString("C_PUERTANE"));
+                 t.setCparaiso(rs.getString("C_PARAISO"));
+                 t.setCpalencia(rs.getString("C_PALENCIA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("error consulta DE LA A TABLA "+e);
+            return null;
+        } 
+        return list;
+}        
  
 public static ClassProductos InsertarPedido(ClassProductos t) throws SQLException{
         BDConexion_server conecta = new BDConexion_server();

@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
  */
 
 public class BDConexion_SantaInes {
-    
-    public static final String URL = "jdbc:mysql://26.102.114.50:3306/angels?useTimezone=true&serverTimezone=UTC";//ZONA4
-    //public static final String URL = "jdbc:mysql://localhost:3306/elrey?useTimezone=true&serverTimezone=UTC";
+     //public static final String URL = "jdbc:mysql://26.74.177.186:3306/angels?useTimezone=true&serverTimezone=UTC";// PARAISO
+      public static final String URL = "jdbc:mysql://26.102.114.50:3306/angels?useTimezone=true&serverTimezone=UTC";//SANTA INES
+    //public static final String URL = "jdbc:mysql://192.168.0.14:3306/angels?useTimezone=true&serverTimezone=UTC";
     public static final String USER = "angels";
     public static final String CLAVE = "Coast@cm";
      

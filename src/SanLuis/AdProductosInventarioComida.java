@@ -169,7 +169,7 @@ public class AdProductosInventarioComida extends javax.swing.JPanel {
                 BDConexion_SanLuis conecta = new BDConexion_SanLuis();
                 Connection cn = conecta.getConexion();
                 java.sql.Statement stmt = cn.createStatement();
-                ResultSet rs = stmt.executeQuery("select estado from angels.productosdescargas WHERE codigo = "+Codigo.getText()+" group by estado;");
+                ResultSet rs = stmt.executeQuery("select estado from angels.productosdescargas WHERE idproductosinve = "+Codigo.getText()+" group by estado;");
                 while (rs.next()) {
                       estado = (rs.getInt(1));
                 }

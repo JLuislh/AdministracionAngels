@@ -71,4 +71,78 @@ public class BDGastosSanLuis {
         return list;
 }
     
+    ////////////////////////////////////////////////DETALLES DE VENTAS//////////////////////////////////////////////////////////////////////
+   
+public static ArrayList<InsertarProducto> ProductosVentas(String Fecha1,String Fecha2) {
+        return venta("SELECT v.codigo,concat(p.DESCRIPCION1 ,' ', p.DESCRIPCION2) as Descripcion,p.PRECIO,sum(v.CANTIDAD) as CANTIDAD,sum(v.TOTAL) as TOTAL\n" +
+"FROM ventas v inner join productos p on v.CODIGO = p.CODIGO join ordenes o on v.NOORDEN = o.NOORDEN \n" +
+"where  FECHA between '"+Fecha1+"' and date_add('"+Fecha2+"', interval 1 day) group by  v.codigo,p.DESCRIPCION1,p.DESCRIPCION2,p.PRECIO  order by codigo;  ");    
+ }  
+
+    private static ArrayList<InsertarProducto> venta(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("CODIGO"));
+                 t.setDescripcion(rs.getString("DESCRIPCION").toUpperCase());
+                 t.setCantidad(rs.getInt("CANTIDAD"));
+                 t.setPrecio(rs.getDouble("PRECIO"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (Exception e) {
+            System.out.println("error consulta DE LA ATABLA "+e);
+            return null;
+        } 
+        return list;
+} 
+    
+
+    
+public static ArrayList<InsertarProducto> ProductosVentasDetallado(String Fecha1,String Fecha2) {
+        return ventaDeta("SELECT v.codigo,concat(p.DESCRIPCION1 ,' ', p.DESCRIPCION2) as DESCRIPCION ,p.PRECIO,v.CANTIDAD,v.TOTAL,o.FECHA\n" +
+"FROM ventas v inner join productos p on v.CODIGO = p.CODIGO join ordenes o on v.NOORDEN = o.NOORDEN where  FECHA between '"+Fecha1+"' and date_add('"+Fecha2+"', interval 1 day) order by date_format(o.fecha,'dd/mm/yyyy');");    
+ }  
+
+    private static ArrayList<InsertarProducto> ventaDeta(String sql){
+    ArrayList<InsertarProducto> list = new ArrayList<InsertarProducto>();
+    BDConexion_SanLuis conecta = new BDConexion_SanLuis();
+    Connection cn = conecta.getConexion();
+    
+        try {
+            InsertarProducto t;
+            Statement stmt = cn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()){
+                 t = new InsertarProducto();
+                 t.setCodigo(rs.getInt("CODIGO"));
+                 t.setDescripcion(rs.getString("DESCRIPCION").toUpperCase());
+                 t.setCantidad(rs.getInt("CANTIDAD"));
+                 t.setPrecio(rs.getDouble("PRECIO"));
+                 t.setTotal(rs.getDouble("TOTAL"));
+                 t.setFecha(rs.getString("FECHA"));
+                 list.add(t);
+                            }
+            cn.close();
+        } catch (Exception e) {
+            System.out.println("error consulta DE LA ATABLA "+e);
+            return null;
+        } 
+        return list;
+}      
+    
+
+    
+///////////////////////////////////////////////////FIN DETALLE VENTAS///////////////////////////////////////////////////////////////    
+    
+    
+    
 }

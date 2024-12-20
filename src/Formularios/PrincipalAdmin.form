@@ -74,15 +74,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Pinula" min="-2" max="-2" attributes="0"/>
+                  <Component id="SANTA_INES" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Encuentro" min="-2" max="-2" attributes="0"/>
+                  <Component id="SAN_LUIS" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="faro" min="-2" max="-2" attributes="0"/>
+                  <Component id="RESIDENCIALES" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="faro1" min="-2" max="-2" attributes="0"/>
+                  <Component id="PALENCIA" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="faro2" min="-2" max="-2" attributes="0"/>
+                  <Component id="PEDIDO" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="ASISTENCIA" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="PAGOSPLANILLA" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -92,11 +96,13 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="Encuentro" pref="64" max="32767" attributes="0"/>
-                      <Component id="Pinula" alignment="0" pref="64" max="32767" attributes="0"/>
-                      <Component id="faro" alignment="0" pref="64" max="32767" attributes="0"/>
-                      <Component id="faro1" alignment="1" pref="64" max="32767" attributes="0"/>
-                      <Component id="faro2" alignment="1" pref="64" max="32767" attributes="0"/>
+                      <Component id="SAN_LUIS" pref="64" max="32767" attributes="0"/>
+                      <Component id="SANTA_INES" alignment="0" pref="64" max="32767" attributes="0"/>
+                      <Component id="RESIDENCIALES" alignment="0" pref="64" max="32767" attributes="0"/>
+                      <Component id="PALENCIA" alignment="1" pref="64" max="32767" attributes="0"/>
+                      <Component id="PEDIDO" alignment="1" pref="64" max="32767" attributes="0"/>
+                      <Component id="ASISTENCIA" alignment="1" pref="64" max="32767" attributes="0"/>
+                      <Component id="PAGOSPLANILLA" alignment="0" pref="64" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -104,7 +110,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="ClasesAngels.PanelRound" name="Pinula">
+        <Container class="ClasesAngels.PanelRound" name="SANTA_INES">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="99" type="rgb"/>
@@ -143,7 +149,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesAngels.PanelRound" name="Encuentro">
+        <Container class="ClasesAngels.PanelRound" name="SAN_LUIS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -182,7 +188,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesAngels.PanelRound" name="faro">
+        <Container class="ClasesAngels.PanelRound" name="RESIDENCIALES">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="cc" red="ff" type="rgb"/>
@@ -213,7 +219,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="PEDIDO"/>
+                <Property name="text" type="java.lang.String" value="RESIDENCIALES"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
@@ -221,10 +227,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesAngels.PanelRound" name="faro1">
+        <Container class="ClasesAngels.PanelRound" name="PALENCIA">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="ff" red="66" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[140, 50]"/>
@@ -252,7 +258,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="REPORTE ASISTENCIA"/>
+                <Property name="text" type="java.lang.String" value="PARAISO"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
@@ -260,7 +266,46 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="ClasesAngels.PanelRound" name="faro2">
+        <Container class="ClasesAngels.PanelRound" name="PEDIDO">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[140, 50]"/>
+            </Property>
+            <Property name="roundTopLeft" type="int" value="20"/>
+            <Property name="roundTopRight" type="int" value="20"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel6" alignment="0" pref="140" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="PEDIDOS PRODUCTO"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="ClasesAngels.PanelRound" name="ASISTENCIA">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="ff" red="ff" type="rgb"/>
@@ -275,26 +320,65 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" alignment="0" pref="140" max="32767" attributes="0"/>
+                  <Component id="jLabel7" alignment="0" pref="140" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="BOLETAS DE PAGO"/>
+                <Property name="text" type="java.lang.String" value="REPORTE ASISTENCIA"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel7MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="ClasesAngels.PanelRound" name="PAGOSPLANILLA">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[140, 50]"/>
+            </Property>
+            <Property name="roundTopLeft" type="int" value="20"/>
+            <Property name="roundTopRight" type="int" value="20"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel8" alignment="0" pref="140" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="PLANILLA"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
               </Events>
             </Component>
           </SubComponents>

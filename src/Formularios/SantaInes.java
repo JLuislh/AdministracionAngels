@@ -12,6 +12,7 @@ import SantaInes.DetalleOrdenesSantaInes;
 import SantaInes.GastosSantaInes;
 import SantaInes.ListadeGastosSantaInes;
 import SantaInes.ReporteMensualSantaInes;
+import SantaInes.ReportedeVentas;
 import java.awt.BorderLayout;
 
 /**
@@ -131,7 +132,7 @@ public class SantaInes extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("ORDENES POR DIA");
+        jLabel3.setText("DETALLE DE ORDENES");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -306,7 +307,7 @@ public class SantaInes extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("DESCARGA MANUAL");
+        jLabel10.setText("DETALLE VENTAS");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -345,9 +346,9 @@ public class SantaInes extends javax.swing.JPanel {
                 .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(PanelSantaInes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -462,7 +463,13 @@ public class SantaInes extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        // TODO add your handling code here:
+        ReportedeVentas op2 = new ReportedeVentas();
+        op2.setSize(1124, 496);
+        op2.setLocation(0, 0);
+        PanelSantaInes.removeAll();
+        PanelSantaInes.add(op2,BorderLayout.CENTER);
+        PanelSantaInes.revalidate();
+        PanelSantaInes.repaint();
     }//GEN-LAST:event_jLabel10MouseClicked
     
 

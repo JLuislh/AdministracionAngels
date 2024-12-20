@@ -5,8 +5,10 @@
 package Formularios;
 
 import Pedido.ActualizarPedido;
+import Pedido.ActualizarPedidoV2;
 import Pedido.ImprimirPedido;
 import Pedido.RecibidoPedido;
+import Pedido.RecibidoPedidoV2;
 import Pedido.Solicitud;
 import java.awt.BorderLayout;
 
@@ -51,7 +53,7 @@ public class Pedido extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 153));
         panelRound1.setRoundBottomLeft(20);
@@ -219,7 +221,7 @@ public class Pedido extends javax.swing.JPanel {
 
     private void NUEVOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NUEVOMouseClicked
     Solicitud op2 = new Solicitud();
-    op2.setSize(1360, 560); 
+    op2.setSize(1315, 500); 
     op2.setLocation(0, 0);
     PanelPedidos.removeAll();
     PanelPedidos.add(op2,BorderLayout.CENTER);
@@ -228,8 +230,8 @@ public class Pedido extends javax.swing.JPanel {
     }//GEN-LAST:event_NUEVOMouseClicked
 
     private void ACTUALIZARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ACTUALIZARMouseClicked
-    ActualizarPedido op2 = new ActualizarPedido();
-    op2.setSize(1360, 560); 
+    ActualizarPedidoV2 op2 = new ActualizarPedidoV2();
+    op2.setSize(1315, 500); 
     op2.setLocation(0, 0);
     PanelPedidos.removeAll();
     PanelPedidos.add(op2,BorderLayout.CENTER);
@@ -238,8 +240,8 @@ public class Pedido extends javax.swing.JPanel {
     }//GEN-LAST:event_ACTUALIZARMouseClicked
 
     private void RECIBIDOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RECIBIDOMouseClicked
-    RecibidoPedido op2 = new RecibidoPedido();
-    op2.setSize(1360, 560); 
+    RecibidoPedidoV2 op2 = new RecibidoPedidoV2();
+    op2.setSize(1320, 500); 
     op2.setLocation(0, 0);
     PanelPedidos.removeAll();
     PanelPedidos.add(op2,BorderLayout.CENTER);
@@ -249,7 +251,7 @@ public class Pedido extends javax.swing.JPanel {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
     ImprimirPedido op2 = new ImprimirPedido();
-    op2.setSize(1360, 560); 
+    op2.setSize(1320, 500); 
     op2.setLocation(0, 0);
     PanelPedidos.removeAll();
     PanelPedidos.add(op2,BorderLayout.CENTER);

@@ -4,12 +4,13 @@
  */
 package SantaInes;
 
-import SanLuis.*;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 
 /**
@@ -75,7 +76,7 @@ public class AdDescargasInventarioSantaInes extends javax.swing.JPanel {
      
      
      
-     private void ListarProductosDescarga(){
+     private void ListarProductosDescarga() throws SQLException{
         int codigo = (int) (Producto.getModel().getValueAt(Producto.getSelectedRow(), 0));
         DescripcionProducto = (String) (Producto.getModel().getValueAt(Producto.getSelectedRow(), 1));
         ArrayList<InsertarProducto> result = BDIngresosSantaInes.ListarProductosDescargasVentas(codigo);
@@ -373,7 +374,11 @@ public class AdDescargasInventarioSantaInes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductoMouseClicked
-       ListarProductosDescarga();
+         try {
+             ListarProductosDescarga();
+         } catch (SQLException ex) {
+             Logger.getLogger(AdDescargasInventarioSantaInes.class.getName()).log(Level.SEVERE, null, ex);
+         }
 
     }//GEN-LAST:event_ProductoMouseClicked
 

@@ -34,9 +34,11 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     }
     
      private void CambiarBodes(){
-         Pinula.setBorder(BorderFactory.createEmptyBorder());
-         Encuentro.setBorder(BorderFactory.createEmptyBorder());
-         faro.setBorder(BorderFactory.createEmptyBorder());
+         SANTA_INES.setBorder(BorderFactory.createEmptyBorder());
+         SAN_LUIS.setBorder(BorderFactory.createEmptyBorder());
+         PEDIDO.setBorder(BorderFactory.createEmptyBorder());
+         RESIDENCIALES.setBorder(BorderFactory.createEmptyBorder());
+         PALENCIA.setBorder(BorderFactory.createEmptyBorder());
     }
 
     /**
@@ -50,16 +52,20 @@ public class PrincipalAdmin extends javax.swing.JFrame {
 
         Inicio = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Pinula = new ClasesAngels.PanelRound();
+        SANTA_INES = new ClasesAngels.PanelRound();
         jLabel1 = new javax.swing.JLabel();
-        Encuentro = new ClasesAngels.PanelRound();
+        SAN_LUIS = new ClasesAngels.PanelRound();
         jLabel2 = new javax.swing.JLabel();
-        faro = new ClasesAngels.PanelRound();
+        RESIDENCIALES = new ClasesAngels.PanelRound();
         jLabel3 = new javax.swing.JLabel();
-        faro1 = new ClasesAngels.PanelRound();
+        PALENCIA = new ClasesAngels.PanelRound();
         jLabel4 = new javax.swing.JLabel();
-        faro2 = new ClasesAngels.PanelRound();
-        jLabel5 = new javax.swing.JLabel();
+        PEDIDO = new ClasesAngels.PanelRound();
+        jLabel6 = new javax.swing.JLabel();
+        ASISTENCIA = new ClasesAngels.PanelRound();
+        jLabel7 = new javax.swing.JLabel();
+        PAGOSPLANILLA = new ClasesAngels.PanelRound();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADMINISTRADOR");
@@ -80,10 +86,10 @@ public class PrincipalAdmin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        Pinula.setBackground(new java.awt.Color(153, 204, 255));
-        Pinula.setPreferredSize(new java.awt.Dimension(140, 50));
-        Pinula.setRoundTopLeft(20);
-        Pinula.setRoundTopRight(20);
+        SANTA_INES.setBackground(new java.awt.Color(153, 204, 255));
+        SANTA_INES.setPreferredSize(new java.awt.Dimension(140, 50));
+        SANTA_INES.setRoundTopLeft(20);
+        SANTA_INES.setRoundTopRight(20);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -94,21 +100,21 @@ public class PrincipalAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout PinulaLayout = new javax.swing.GroupLayout(Pinula);
-        Pinula.setLayout(PinulaLayout);
-        PinulaLayout.setHorizontalGroup(
-            PinulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SANTA_INESLayout = new javax.swing.GroupLayout(SANTA_INES);
+        SANTA_INES.setLayout(SANTA_INESLayout);
+        SANTA_INESLayout.setHorizontalGroup(
+            SANTA_INESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        PinulaLayout.setVerticalGroup(
-            PinulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        SANTA_INESLayout.setVerticalGroup(
+            SANTA_INESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Encuentro.setBackground(new java.awt.Color(204, 255, 204));
-        Encuentro.setPreferredSize(new java.awt.Dimension(140, 50));
-        Encuentro.setRoundTopLeft(20);
-        Encuentro.setRoundTopRight(20);
+        SAN_LUIS.setBackground(new java.awt.Color(204, 255, 204));
+        SAN_LUIS.setPreferredSize(new java.awt.Dimension(140, 50));
+        SAN_LUIS.setRoundTopLeft(20);
+        SAN_LUIS.setRoundTopRight(20);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -119,90 +125,140 @@ public class PrincipalAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout EncuentroLayout = new javax.swing.GroupLayout(Encuentro);
-        Encuentro.setLayout(EncuentroLayout);
-        EncuentroLayout.setHorizontalGroup(
-            EncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SAN_LUISLayout = new javax.swing.GroupLayout(SAN_LUIS);
+        SAN_LUIS.setLayout(SAN_LUISLayout);
+        SAN_LUISLayout.setHorizontalGroup(
+            SAN_LUISLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        EncuentroLayout.setVerticalGroup(
-            EncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        SAN_LUISLayout.setVerticalGroup(
+            SAN_LUISLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
         );
 
-        faro.setBackground(new java.awt.Color(255, 204, 153));
-        faro.setPreferredSize(new java.awt.Dimension(140, 50));
-        faro.setRoundTopLeft(20);
-        faro.setRoundTopRight(20);
+        RESIDENCIALES.setBackground(new java.awt.Color(255, 204, 153));
+        RESIDENCIALES.setPreferredSize(new java.awt.Dimension(140, 50));
+        RESIDENCIALES.setRoundTopLeft(20);
+        RESIDENCIALES.setRoundTopRight(20);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("PEDIDO");
+        jLabel3.setText("RESIDENCIALES");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout faroLayout = new javax.swing.GroupLayout(faro);
-        faro.setLayout(faroLayout);
-        faroLayout.setHorizontalGroup(
-            faroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout RESIDENCIALESLayout = new javax.swing.GroupLayout(RESIDENCIALES);
+        RESIDENCIALES.setLayout(RESIDENCIALESLayout);
+        RESIDENCIALESLayout.setHorizontalGroup(
+            RESIDENCIALESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        faroLayout.setVerticalGroup(
-            faroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        RESIDENCIALESLayout.setVerticalGroup(
+            RESIDENCIALESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        faro1.setBackground(new java.awt.Color(255, 255, 153));
-        faro1.setPreferredSize(new java.awt.Dimension(140, 50));
-        faro1.setRoundTopLeft(20);
-        faro1.setRoundTopRight(20);
+        PALENCIA.setBackground(new java.awt.Color(102, 255, 204));
+        PALENCIA.setPreferredSize(new java.awt.Dimension(140, 50));
+        PALENCIA.setRoundTopLeft(20);
+        PALENCIA.setRoundTopRight(20);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("REPORTE ASISTENCIA");
+        jLabel4.setText("PARAISO");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout faro1Layout = new javax.swing.GroupLayout(faro1);
-        faro1.setLayout(faro1Layout);
-        faro1Layout.setHorizontalGroup(
-            faro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PALENCIALayout = new javax.swing.GroupLayout(PALENCIA);
+        PALENCIA.setLayout(PALENCIALayout);
+        PALENCIALayout.setHorizontalGroup(
+            PALENCIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        faro1Layout.setVerticalGroup(
-            faro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PALENCIALayout.setVerticalGroup(
+            PALENCIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        faro2.setBackground(new java.awt.Color(255, 255, 153));
-        faro2.setPreferredSize(new java.awt.Dimension(140, 50));
-        faro2.setRoundTopLeft(20);
-        faro2.setRoundTopRight(20);
+        PEDIDO.setBackground(new java.awt.Color(204, 204, 255));
+        PEDIDO.setPreferredSize(new java.awt.Dimension(140, 50));
+        PEDIDO.setRoundTopLeft(20);
+        PEDIDO.setRoundTopRight(20);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("BOLETAS DE PAGO");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("PEDIDOS PRODUCTO");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                jLabel6MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout faro2Layout = new javax.swing.GroupLayout(faro2);
-        faro2.setLayout(faro2Layout);
-        faro2Layout.setHorizontalGroup(
-            faro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        javax.swing.GroupLayout PEDIDOLayout = new javax.swing.GroupLayout(PEDIDO);
+        PEDIDO.setLayout(PEDIDOLayout);
+        PEDIDOLayout.setHorizontalGroup(
+            PEDIDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        faro2Layout.setVerticalGroup(
-            faro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        PEDIDOLayout.setVerticalGroup(
+            PEDIDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ASISTENCIA.setBackground(new java.awt.Color(255, 255, 153));
+        ASISTENCIA.setPreferredSize(new java.awt.Dimension(140, 50));
+        ASISTENCIA.setRoundTopLeft(20);
+        ASISTENCIA.setRoundTopRight(20);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("REPORTE ASISTENCIA");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ASISTENCIALayout = new javax.swing.GroupLayout(ASISTENCIA);
+        ASISTENCIA.setLayout(ASISTENCIALayout);
+        ASISTENCIALayout.setHorizontalGroup(
+            ASISTENCIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        ASISTENCIALayout.setVerticalGroup(
+            ASISTENCIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        PAGOSPLANILLA.setBackground(new java.awt.Color(255, 255, 153));
+        PAGOSPLANILLA.setPreferredSize(new java.awt.Dimension(140, 50));
+        PAGOSPLANILLA.setRoundTopLeft(20);
+        PAGOSPLANILLA.setRoundTopRight(20);
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("PLANILLA");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PAGOSPLANILLALayout = new javax.swing.GroupLayout(PAGOSPLANILLA);
+        PAGOSPLANILLA.setLayout(PAGOSPLANILLALayout);
+        PAGOSPLANILLALayout.setHorizontalGroup(
+            PAGOSPLANILLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        PAGOSPLANILLALayout.setVerticalGroup(
+            PAGOSPLANILLALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -211,15 +267,19 @@ public class PrincipalAdmin extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Pinula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SANTA_INES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Encuentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SAN_LUIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(faro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RESIDENCIALES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(faro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PALENCIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(faro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PEDIDO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ASISTENCIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PAGOSPLANILLA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -227,11 +287,13 @@ public class PrincipalAdmin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Encuentro, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(Pinula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(faro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(faro1, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(faro2, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                    .addComponent(SAN_LUIS, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(SANTA_INES, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(RESIDENCIALES, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(PALENCIA, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(PEDIDO, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(ASISTENCIA, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(PAGOSPLANILLA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -262,7 +324,7 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     Inicio.revalidate();
     Inicio.repaint();
     CambiarBodes();
-    Pinula.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
+    SANTA_INES.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -274,11 +336,11 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     Inicio.revalidate();
     Inicio.repaint();
     CambiarBodes();
-    Encuentro.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
+    SAN_LUIS.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-    Pedido op2 = new Pedido();
+    Residenciales op2 = new Residenciales();
     op2.setSize(1320, 644);
     op2.setLocation(0, 0);
     Inicio.removeAll();
@@ -286,16 +348,40 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     Inicio.revalidate();
     Inicio.repaint();
     CambiarBodes();
-    faro.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
+    RESIDENCIALES.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+    Palencia op2 = new Palencia();
+    op2.setSize(1320, 644);
+    op2.setLocation(0, 0);
+    Inicio.removeAll();
+    Inicio.add(op2,BorderLayout.CENTER);
+    Inicio.revalidate();
+    Inicio.repaint();
+    CambiarBodes();
+    PALENCIA.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+     Pedido op2 = new Pedido();
+    op2.setSize(1320, 644);
+    op2.setLocation(0, 0);
+    Inicio.removeAll();
+    Inicio.add(op2,BorderLayout.CENTER);
+    Inicio.revalidate();
+    Inicio.repaint();
+    CambiarBodes();
+    PEDIDO.setBorder(BorderFactory.createMatteBorder(0, 0, 10, 0, Color.red));
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -333,17 +419,21 @@ public class PrincipalAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private ClasesAngels.PanelRound Encuentro;
+    private ClasesAngels.PanelRound ASISTENCIA;
     private javax.swing.JPanel Inicio;
-    private ClasesAngels.PanelRound Pinula;
-    private ClasesAngels.PanelRound faro;
-    private ClasesAngels.PanelRound faro1;
-    private ClasesAngels.PanelRound faro2;
+    private ClasesAngels.PanelRound PAGOSPLANILLA;
+    private ClasesAngels.PanelRound PALENCIA;
+    private ClasesAngels.PanelRound PEDIDO;
+    private ClasesAngels.PanelRound RESIDENCIALES;
+    private ClasesAngels.PanelRound SANTA_INES;
+    private ClasesAngels.PanelRound SAN_LUIS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

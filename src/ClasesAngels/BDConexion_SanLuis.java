@@ -18,8 +18,8 @@ public class BDConexion_SanLuis {
     
     
     
-    public static final String URL = "jdbc:mysql://26.247.51.34:3306/angels?useTimezone=true&serverTimezone=UTC";//encuentro
-    //public static final String URL = "jdbc:mysql://localhost:3306/elrey?useTimezone=true&serverTimezone=UTC";//encuentro
+    public static final String URL = "jdbc:mysql://26.247.51.34:3306/angels?useTimezone=true&serverTimezone=UTC";//PUERTA NEGRA
+    //public static final String URL = "jdbc:mysql://localhost:3306/elrey?useTimezone=true&serverTimezone=UTC";//LOCAL
     public static final String USER = "angels";
     public static final String CLAVE = "Coast@cm";
      

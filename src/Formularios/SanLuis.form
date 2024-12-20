@@ -497,7 +497,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="DESCARGA MANUAL"/>
+                <Property name="text" type="java.lang.String" value="DETALLE VENTAS"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseClicked"/>

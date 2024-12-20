@@ -619,7 +619,7 @@ public class ActualizarPedido extends javax.swing.JPanel {
         Buscarinformacion();
         cantidad1.requestFocus();
         
-        if (evt.getClickCount() > 2) {eliminarproducto();ListarProductos();ListarProductosSolicitados();}
+        if (evt.getClickCount() > 1) {eliminarproducto();ListarProductos();ListarProductosSolicitados();}
         
     }//GEN-LAST:event_SolicitadoMouseClicked
 

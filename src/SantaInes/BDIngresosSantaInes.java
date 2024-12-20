@@ -4,7 +4,6 @@
  */
 package SantaInes;
 
-import ClasesAngels.BDConexion_SanLuis;
 import ClasesAngels.BDConexion_SantaInes;
 import ClassAngels.InsertarProducto;
 import java.sql.*;
@@ -418,13 +417,13 @@ public static InsertarProducto BuscarProductoPromo(int a) throws SQLException{
 }  
     
     
-    public static ArrayList<InsertarProducto> ListarProductosDescargasVentas (int a) {
+    public static ArrayList<InsertarProducto> ListarProductosDescargasVentas (int a) throws SQLException {
         return VentDesc("SELECT pd.id_descarga,pi.DESCRIPCION,pd.cantidadout,pi.unidad_medida FROM angels.productosdescargas pd inner join productosinventario pi on pd.idproductosinve = pi.IDPRODUCTOSINVE where pd.codigo = "+a);    
  }  
 
-    private static ArrayList<InsertarProducto> VentDesc(String sql){
+    private static ArrayList<InsertarProducto> VentDesc(String sql) throws SQLException {
     ArrayList<InsertarProducto> list = new ArrayList<>();
-    BDConexion_SantaInes conecta = new BDConexion_SantaInes();
+        BDConexion_SantaInes conecta = new BDConexion_SantaInes();
     Connection cn = conecta.getConexion();
     
         try {

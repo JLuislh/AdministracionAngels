@@ -12,6 +12,7 @@ import SanLuis.DetalleOrdenesSanLuis;
 import SanLuis.GastosSanLuis;
 import SanLuis.ListadeGastosSanLuis;
 import SanLuis.ReporteMensualSanLuis;
+import SanLuis.ReportedeVentas;
 import java.awt.BorderLayout;
 
 /**
@@ -318,7 +319,7 @@ public class SanLuis extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("DESCARGA MANUAL");
+        jLabel10.setText("DETALLE VENTAS");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -473,7 +474,13 @@ public class SanLuis extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        // TODO add your handling code here:
+    ReportedeVentas op2 = new ReportedeVentas();
+    op2.setSize(1124, 572);
+    op2.setLocation(0, 0);
+    PanelSanLuis.removeAll();
+    PanelSanLuis.add(op2,BorderLayout.CENTER);
+    PanelSanLuis.revalidate();
+    PanelSanLuis.repaint();
     }//GEN-LAST:event_jLabel10MouseClicked
 
 
