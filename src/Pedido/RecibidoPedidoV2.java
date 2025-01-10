@@ -445,7 +445,7 @@ public class RecibidoPedidoV2 extends javax.swing.JPanel {
     private void TablePedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePedidosMouseClicked
         NoPedido.setText((String.valueOf(TablePedidos.getModel().getValueAt(TablePedidos.getSelectedRow(), 0))));
         TxtFecha.setText((String.valueOf(TablePedidos.getModel().getValueAt(TablePedidos.getSelectedRow(), 1))));
-        if(Solicitado.getRowCount() > 0){try {ActualizartablaProductosResibidos();} catch (SQLException ex) {System.out.println("ERROR "+ex);}}
+        //if(Solicitado.getRowCount() > 0){try {ActualizartablaProductosResibidos();} catch (SQLException ex) {System.out.println("ERROR "+ex);}}
         ListarProductosSolicitados();
     }//GEN-LAST:event_TablePedidosMouseClicked
 

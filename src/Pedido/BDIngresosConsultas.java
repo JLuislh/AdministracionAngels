@@ -320,16 +320,23 @@ public static ArrayList<ClassProductos> ListarPedidosRecibido() {
         BDConexion_server conecta = new BDConexion_server();
         Connection cn = conecta.getConexion();
         PreparedStatement ps = null;
+        PreparedStatement ps2 = null;
+        ps2 = cn.prepareStatement("""
+                                  update pedidosproductos.productos_pedido set 
+                                  R_SANTAINES = C_SANTAINES,
+                                  R_PUERTANE = C_PUERTANE,
+                                  R_PARAISO = C_PARAISO,
+                                  R_PALENCIA = C_PALENCIA,
+                                  R_RESIDENCIALES = C_RESIDENCIALES WHERE  ID_PEDIDO  = ?""");
+        ps2.setInt(1,t.getId_pedido());
         ps = cn.prepareStatement("UPDATE PEDIDOS SET ESTADO = 2 WHERE ID_PEDIDO = ?");
         ps.setInt(1,t.getId_pedido());    
         int rowsUpdated = ps.executeUpdate();
+        ps2.executeUpdate();
         cn.close();
         ps.close();
-        if (rowsUpdated > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        ps2.close();
+        return rowsUpdated > 0;
     }    
  
  public static boolean CerrarPedidoRecibido(ClassProductos t) throws SQLException{
