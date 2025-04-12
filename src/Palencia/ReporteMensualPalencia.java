@@ -41,7 +41,6 @@ public class ReporteMensualPalencia extends javax.swing.JPanel {
             FECHAINs = df.format(FECHAIN.getDate());
             FECHAFINs = df.format(FECHAFIN.getDate());
 
-           
                 BDConexion_Palencia con = new BDConexion_Palencia();
                 Connection conexion = con.getConexion();
                 JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ResumenIngresosPalencia.jasper");

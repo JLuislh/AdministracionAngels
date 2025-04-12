@@ -4,6 +4,7 @@
  */
 package Residenciales;
 
+import ClasesAngels.BDConexion_Residenciales;
 import SantaInes.*;
 import ClassAngels.InsertarProducto;
 import ClassAngels.TextAreaRenderer;
@@ -29,6 +30,7 @@ import net.sf.jasperreports.engine.util.JRLoader;
 public class ReportedeVentas extends javax.swing.JPanel {
      String Fecha1;
      String Fecha2;
+     int tipo;
     /**
      * Creates new form VentasPorDia
      */
@@ -131,17 +133,19 @@ public class ReportedeVentas extends javax.swing.JPanel {
              
      }
      
-    /* private void imprimirventa(){
+    private void imprimirventadetallado(){
             
-            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-            Fecha = df.format(FechaIn.getDate());
+            DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+            Fecha1 = df.format(FechaIn.getDate());
+            Fecha2 = df.format(FechaFin.getDate());
          
-            BDConexion con = new BDConexion();
-            Connection conexion = con.getConexion();
+           BDConexion_Residenciales con= new BDConexion_Residenciales();
+         java.sql.Connection conexion= con.getConexion();
             try {
-                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ReporteVentasResumen.jasper");
+                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\VentasPorOrden.jasper");
                 Map parametros = new HashMap();
-                parametros.put("FECHA", Fecha );
+                parametros.put("Fecha1", Fecha1);
+                parametros.put("Fecha2", Fecha2);
                 System.out.println(parametros);
                 JasperPrint print = JasperFillManager.fillReport(jasperReport, parametros, conexion);
                 JasperPrintManager.printReport(print, true);
@@ -151,20 +155,20 @@ public class ReportedeVentas extends javax.swing.JPanel {
             }
         } 
 
-    
-    
-    
-    private void imprimirventadetallado(){
+    private void imprimirventa(){
         
-           DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-           Fecha = df.format(FechaIn.getDate());
-    
-            BDConexion con = new BDConexion();
-            Connection conexion = con.getConexion();
+            
+            DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+            Fecha1 = df.format(FechaIn.getDate());
+            Fecha2 = df.format(FechaFin.getDate());
+         
+            BDConexion_Residenciales con= new BDConexion_Residenciales();
+            java.sql.Connection conexion= con.getConexion();
             try {
-                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\ReporteVentasTodo.jasper");
+                JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("C:\\Reportes\\ANGELS\\VentasResumen.jasper");
                 Map parametros = new HashMap();
-                parametros.put("FECHA", Fecha );
+                parametros.put("FECHA1", Fecha1);
+                parametros.put("FECHA2", Fecha2);
                 System.out.println(parametros);
                 JasperPrint print = JasperFillManager.fillReport(jasperReport, parametros, conexion);
                 JasperPrintManager.printReport(print, true);
@@ -172,7 +176,8 @@ public class ReportedeVentas extends javax.swing.JPanel {
                 System.out.println("F" + e);
                 JOptionPane.showMessageDialog(null, "ERROR EJECUTAR REPORTES =  " + e);
             }
-        } */
+        } 
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -285,7 +290,7 @@ public class ReportedeVentas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+      tipo = 1; //RESUMEN
       if(FechaIn.getDate() != null && FechaFin.getDate() !=null){
           ListarVentas();
         }else{        JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA...");        
@@ -293,20 +298,21 @@ public class ReportedeVentas extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       /* if (FechaIn.getDate() != null) {
-            if (detalle.isSelected()) {
-                imprimirventadetallado();
+        if (FechaIn.getDate() != null) {
+            if (tipo == 1) {
+               imprimirventa();
             } else {
-                imprimirventa();
+               imprimirventadetallado();
             }
         } else {
             JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA...");
 
-        }*/
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       if(FechaIn.getDate() != null && FechaFin.getDate() !=null){
+       tipo = 2; //Detallado
+        if(FechaIn.getDate() != null && FechaFin.getDate() !=null){
           ListarVentasDetallado();
         }else{        JOptionPane.showMessageDialog(null, "INGRESE UNA FECHA...");        
         }    
